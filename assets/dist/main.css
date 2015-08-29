@@ -1,0 +1,196 @@
+/* set variables */
+/* customize skeleton.css styles */
+* {
+  box-sizing: border-box;
+}
+body,
+p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Oswald', sans-serif;
+  color: #323232;
+}
+ul {
+  font-weight: 400;
+}
+ul li {
+  font-weight: 300;
+}
+code {
+  font-weight: 400;
+  font-size: 15px;
+  color: #323232;
+  overflow: scroll;
+}
+.lead {
+  font-weight: 400px;
+  font-size: 20px;
+}
+.intro {
+  margin: 2em 0 4em;
+}
+body,
+section {
+  padding: 2em 0 1em;
+}
+.container {
+  max-width: none;
+}
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  background-color: #84ddc6;
+  border-color: #31b090;
+}
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  background-color: #5cd2b4;
+  border-color: #31b090;
+}
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  color: #333;
+  border-color: #888;
+}
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #1b604f;
+  border-color: #26886f;
+}
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #37c4a0;
+}
+/* main CSS */
+.section-light {
+  background-color: white;
+}
+.section-dark {
+  background-color: #fafafa;
+}
+.highlight {
+  background-color: rgba(49, 176, 144, 0.5);
+  padding: 1em 0;
+}
+.highlight * {
+  color: #154c3e !important;
+}
+#samples {
+  padding: 0;
+}
+/*
+Browser window CSS partially adapted from this codepen: http://codepen.io/danielcgold/pen/doFae
+*/
+.browser_wrapper {
+  position: relative;
+  margin: 0 0 1em 0;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.33);
+}
+.browser_header {
+  background-color: #ebebeb;
+  padding: .5em .5em 2.5em;
+  position: relative;
+  border-bottom: 1px solid lightgray;
+}
+.browser_header .name {
+  margin: 0 0 .5em;
+  padding: 0;
+  text-align: center;
+  font-size: .8em;
+  letter-spacing: 0.1px;
+  color: #666;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-weight: normal;
+}
+.browser_header .address_bar {
+  left: 0.5em;
+  right: 0.5em;
+  position: absolute;
+  background: #fcfcfc;
+  padding: .2em .5em;
+  border: .0625em solid #d8d8d8;
+  box-shadow: black 0 0 0.125em inset;
+  border-radius: 0.25em;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.browser_header .address_bar a {
+  font-size: .75em;
+  text-decoration: none;
+  color: #888;
+}
+.browser_header .address_bar a:hover {
+  color: #333;
+}
+.browser_content {
+  border: .0625em solid #a3a3a3;
+  border-top: none;
+  background: #f9f9f9;
+  line-height: 0;
+}
+.browser_content img {
+  width: 100%;
+  /*    filter: grayscale(0.8);
+*/
+}
+.projectRow {
+  margin: 0;
+  padding: 2em 0 1em;
+  /*  border-bottom: @section-border;
+*/
+}
+.projectRow:nth-child(2n+0) {
+  background-color: white;
+  color: black;
+}
+.projectRow:nth-child(2n+0) .sitePreview {
+  float: right;
+}
+.projectRow:nth-child(2n+0) .siteInfo {
+  margin-left: 0;
+}
+.projectRow:nth-child(2n+1) {
+  background-color: #fafafa;
+  color: black;
+}
+.dark {
+  background-color: #fafafa;
+}

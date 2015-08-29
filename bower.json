@@ -1,0 +1,13 @@
+
+{
+  "name": "mygithubpage",
+  "version": "1.0.0",
+  "authors": [
+    "Jacob LeGrone <contact@jacoblegrone.com>"
+  ],
+  "description": "Jacob LeGrone's Portfolio",
+  "license": "MIT",
+  "dependencies": {
+  	"react": "*"
+  }
+}
