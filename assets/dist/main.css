@@ -124,6 +124,10 @@ Browser window CSS partially adapted from this codepen: http://codepen.io/daniel
   border-radius: 2px;
   box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.33);
 }
+.browser_wrapper:hover img {
+  -webkit-filter: none;
+          filter: none;
+}
 .browser_header {
   background-color: #ebebeb;
   padding: .5em .5em 2.5em;
@@ -168,8 +172,9 @@ Browser window CSS partially adapted from this codepen: http://codepen.io/daniel
 }
 .browser_content img {
   width: 100%;
-  /*    filter: grayscale(0.8);
-*/
+  cursor: pointer;
+  -webkit-filter: grayscale(0.3);
+          filter: grayscale(0.3);
 }
 .projectRow {
   margin: 0;
