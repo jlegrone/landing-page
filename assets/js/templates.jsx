@@ -54,8 +54,6 @@ var SitePreviewComponent = React.createClass({
         };
     },
     handleClick: function(event) {
-        //this.setState({liked: !this.state.liked});
-        console.log(this.state);
         if (this.state.page < this.state.last){
             this.setState({page: this.state.page + 1});
         }
