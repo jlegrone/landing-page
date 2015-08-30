@@ -6,33 +6,31 @@
         <title>Jacob LeGrone | Portfolio</title>
         <meta name="description" content="Jacob LeGrone's web portfolio">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="rgb(49,176,144)">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="stylesheet" href="assets/css/vendor/normalize.css">
-        <link rel="stylesheet" href="assets/css/vendor/skeleton.css">
         <link rel="stylesheet" href="assets/dist/main.css">
         <link href='https://fonts.googleapis.com/css?family=Lato:400,300|Oswald' rel='stylesheet' type='text/css'>
-        <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
-        <script src="bower_components/react/react.js"></script>
-        <script src="bower_components/react/JSXTransformer.js"></script>
+        <script src="assets/dist/react.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+
+
+<!--
+
+Thanks for checking out my portfolio! To view the source for this site, please visit https://github.com/jlegrone/jlegrone.github.io.
+
+-->
+
 
         <div class="container">
-
             <div class="row intro">
                 <div class="six columns">
                     <h1>About Jacob LeGrone</h1>
                     <p class="lead">Hi, I'm a web developer located in Charlotte, North Carolina.</p>
                     <p class="lead">Below you will find some of my work.</p>
                 </div>
-
                 <div class="six columns">
-                
 <pre><code>var jacob = {
-    age: 24,
     location: "Charlotte NC",
     role: "Front-end Dev",
     education: {
@@ -40,66 +38,20 @@
         institution: "University of SC Honors College"
     },
     hobbies: ["dancing", "music", "disc golf"]
-}</code></pre>
-
+};</code></pre>
                 </div>
-
             </div>
         </div>
-
         <div class="highlight">
             <h2 class="container">Projects</h2>
         </div>
         <section id="samples">
         </section>
-
         <div class="highlight">
             <h2 class="container">Experience</h2>
         </div>
-        <section class="dark">
-            <div class="container">
-                <div class="row">
-                    <div class="four columns">
-                        <h5>Software Stack</h5>
-                        <ul>Front end
-                            <li>HTML5, CSS3, JavaScript</li>
-                            Back end
-                            <li>Python, PHP, Node.js</li>
-                            Databases
-                            <li>NDB (NoSQL), MySQL</li>
-                            Platforms
-                            <li>Google AppEngine, Heroku, Wordpress</li>
-                        </ul>
-                    </div>
-
-                    <div class="four columns">
-                        <h5>Tools & Software</h5>
-                        <ul>
-                            Frameworks & Libraries
-                            <li>Bootstrap, Django, React.js, D3.js, jQuery</li>
-                            Build Tools
-                            <li>NPM, Bower, Gulp/Grunt</li>
-                            Image Manipulation
-                            <li>GIMP, PhotoShop, Illustrator</li>
-                            Other Software Packages
-                            <li>ArcGIS, Google Earth, R, Excel</li>
-                        </ul>
-                    </div>
-
-                    <div class="four columns">
-                        <h5>Web APIs</h5>
-                        <ul>
-                            <li>Google Maps JavaScript V3</li>
-                            <li>Facebook JavaScript & Python SDK</li>
-                            <li>Google Docs, Calendar, and Mail APIs</li>
-                            <li>Mandrill & Mailchimp REST APIs</li>
-                            <li>PayPal Instant Payment Notification</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <section id="experience" class="dark">
         </section>
-
         <div class="highlight">
             <h2 class="container">Contact Jacob</h2>
         </div>
@@ -123,7 +75,6 @@
                 </form>
             </div>
         </section>
-        <script type="text/jsx" src="assets/js/components.js"></script>
-        <script src="assets/js/vendor/ga.js"></script>
+        <script src="assets/dist/main.js"></script>
     </body>
 </html>

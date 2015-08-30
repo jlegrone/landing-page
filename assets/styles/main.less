@@ -1,4 +1,9 @@
-/* set variables */
+//import vendor CSS
+
+@import (inline) "vendor/normalize.css";
+@import (inline) "vendor/skeleton.css";
+
+// set variables
 
 @section-light: white;
 @section-light-text: black;
@@ -15,7 +20,7 @@
 
 @browserborder: lightgray;
 
-/* customize skeleton.css styles */
+// customize skeleton.css styles
 
 * {
   box-sizing: border-box;
@@ -87,7 +92,13 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focu
     border: 1px solid lighten(@highlight-color, 5%);
 }
 
-/* main CSS */
+
+
+
+
+
+
+// main CSS
 
 .section-light {
   background-color: @section-light;

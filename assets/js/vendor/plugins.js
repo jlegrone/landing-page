@@ -21,4 +21,4 @@
     }
 }());
 
-// Place any jQuery/helper plugins in here.
+// Additional plugins here
