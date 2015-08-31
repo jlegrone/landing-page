@@ -36,15 +36,25 @@ var ExperienceRowComponent = React.createClass({
 
 var SiteInfoComponent = React.createClass({
     render: function() {
+        var tags = this.props.data.tags.map(function(tag) {
+            return (
+                <li>{tag}</li>
+            );
+        });
         return (
             <div className="five columns siteInfo">
-                <h4>{this.props.name}</h4>
-                    <p>{this.props.description}</p>
-                <a className="button" href={"http://" + this.props.linkUrl}>Visit {this.props.linkUrl}</a>
+                <h4>{this.props.data.name}</h4>
+                    <p>{this.props.data.description}</p>
+                <a className="button" href={"http://" + this.props.data.linkUrl}>Visit {this.props.data.linkUrl}</a>
+                <ul className="siteTags">
+                    {tags}
+                </ul>
             </div>
         );
     }
 });
+
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 var SitePreviewComponent = React.createClass({
     getInitialState: function() {
@@ -70,7 +80,9 @@ var SitePreviewComponent = React.createClass({
                         <div className="address_bar"><a href={"http://" + this.props.views[this.state.page].displayUrl}>http://{this.props.views[this.state.page].displayUrl}</a></div>
                     </div>
                     <div className="browser_content">
-                        <img src={"assets/img/" + this.props.views[this.state.page].img} onClick={this.handleClick}/>
+                        <ReactCSSTransitionGroup transitionName="example" transitionAppear={true}>
+                            <img src={"assets/img/" + this.props.views[this.state.page].img} onClick={this.handleClick}/>
+                        </ReactCSSTransitionGroup>
                     </div>
                 </div>
             </div>
@@ -82,7 +94,7 @@ var ProjectRowComponent = React.createClass({
     render: function() {
         var projectNodes = this.props.data.map(function (site, index) {
             var siteView = <SitePreviewComponent views={site.views}/>;
-            var siteInfo = <SiteInfoComponent name={site.name} description={site.description} displayUrl={site.displayUrl} linkUrl={site.linkUrl}/>;
+            var siteInfo = <SiteInfoComponent data={site}/>;
             return (
                 <div className="row projectRow">
                     <div className="container">

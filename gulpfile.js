@@ -23,7 +23,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('components:move', function () {
-  gulp.src('bower_components/react/react.min.js')
+  gulp.src('bower_components/react/react-with-addons.min.js')
   .pipe(gulp.dest('assets/dist'));
 });
 
@@ -52,6 +52,7 @@ gulp.task('lint', function () {
 gulp.task('build', ['styles', 'js:build', 'components:move']);
 gulp.task('default', ['build']);
 gulp.task('watch', ['build'], function () {
-  gulp.watch('assets/less/**/*.less', ['styles']);
+  gulp.watch('assets/styles/**/*.less', ['styles']);
   gulp.watch('assets/js/**/*.js', ['js:build']);
+  gulp.watch('assets/js/**/*.jsx', ['jsx:compile']);
 });

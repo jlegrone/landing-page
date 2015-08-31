@@ -11,14 +11,12 @@
 @section-dark: rgb(250,250,250);
 @section-dark-text: black;
 
-@section-border: 1px solid lightgray;
-
 @highlight-color: rgb(49,176,144);
 @highlight-text-color: darken(@highlight-color, 25%);
 
 @dark-text: rgb(50,50,50);
 
-@browserborder: lightgray;
+@browserborder: 1px solid rgb(180,180,180);
 
 // customize skeleton.css styles
 
@@ -129,9 +127,10 @@ Browser window CSS partially adapted from this codepen: http://codepen.io/daniel
   position: relative;
   margin: 0 0 1em 0;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  border: 1px solid @browserborder;
-  border-radius: 2px;
+  border: @browserborder;
+  border-radius: 3px;
   box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.33);
+  overflow: hidden;
 
   &:hover img {
     filter: none;
@@ -142,7 +141,7 @@ Browser window CSS partially adapted from this codepen: http://codepen.io/daniel
   background-color: rgb(235,235,235);
   padding: .5em .5em 2.5em;
   position: relative;
-  border-bottom: 1px solid @browserborder;
+  border-bottom: @browserborder;
 
   .name {
     margin: 0 0 .5em;
@@ -160,7 +159,6 @@ Browser window CSS partially adapted from this codepen: http://codepen.io/daniel
     position: absolute;
     background: #fcfcfc;
     padding: .2em .5em;
-    border: .0625em solid #d8d8d8;
     box-shadow: black 0 0 0.125em inset;
     border-radius: 0.25em;
     overflow: hidden;
@@ -178,23 +176,60 @@ Browser window CSS partially adapted from this codepen: http://codepen.io/daniel
 }
 
 .browser_content {
-  border: .0625em solid #a3a3a3;
-  border-top: none;
+  position: relative;
+  width: 100%;
+  padding-bottom: 57.6%;
+  border: none;
   background: #f9f9f9;
   line-height: 0;
 
   img {
     width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
     cursor: pointer;
     filter: grayscale(0.3);
+  }
+}
+
+.example-loaded {
+  opacity: 0.01;
+}
+
+.example-loaded.example-loaded-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.example-appear {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+}
+
+ul.siteTags {
+  list-style-type: none;
+  margin-top: 1em;
+
+  li {
+    border: 1px solid lighten(@highlight-color, 30%);
+    color: lighten(@dark-text, 40%);
+    font-size: 0.9em;
+    display: inline-block;
+    padding: 2px 4px;
+    margin: 0 6px 10px 0;
+    border-radius: 2px;
+    white-space: nowrap;
   }
 }
 
 .projectRow {
   margin: 0;
   padding: 2em 0 1em;
-/*  border-bottom: @section-border;
-*/
 
   &:nth-child(2n+0) {
     background-color: @section-light;

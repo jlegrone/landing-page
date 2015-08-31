@@ -2,6 +2,7 @@ var webSamples = [
     {
         name: "SC Health Atlas",
         linkUrl: "schealthatlas.org",
+        tags: ["Python", "Google Maps API", "ArcGIS", "Web Scraping"],
         description: "The South Carolina Health Atlas is a source of health and social services data for South Carolina. The Atlas aims to provide South Carolinians with data and tools necessary to explore the availability of health and social services in their communities, and link people to the care they need.",
         views: [
             {
@@ -39,6 +40,7 @@ var webSamples = [
     {
         name: "Country Dance & Song Society Dance Map",
         linkUrl: "map.cdss.org",
+        tags: ["Python", "Google AppEngine", "Facebook Graph API", "Google Maps API", "Google Calendar API", "Mandrill API"],
         description: "The Country Dance and Song Society sponsors folk dancing organizations around the world. They wished to provide an interactive and community maintained map of dance venues.",
         views: [
             {
@@ -66,6 +68,7 @@ var webSamples = [
     {
         name: "Engineers Without Borders USC Chapter",
         linkUrl: "ewbusc.org",
+        tags: ["PHP", "Bootstrap"],
         description: "The Student Chapter of EWB-USA at the University of South Carolina (EWB-USC), founded in 2010, is a strong interdisciplinary team from a variety of colleges and majors. Our student members come from the College of Engineering and Computing, the College of Arts and Sciences, the Arnold School of Public Health, and the Darla Moore School of Business.",
         views: [
             {
@@ -88,6 +91,7 @@ var webSamples = [
     {
         name: "Personal Blog",
         linkUrl: "blog.jacoblegrone.com",
+        tags: ["HTML5", "CSS3"],
         description: "I designed the styling for my personal 'contra dance calling' blog, which is hosted on the Tumblr platform.",
         views: [
             {
