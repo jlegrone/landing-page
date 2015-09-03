@@ -9,6 +9,7 @@ var argv         = require('minimist')(process.argv.slice(2)),
     uglify       = require('gulp-uglify'),
     gulpif       = require('gulp-if'),
     gutil        = require('gulp-util'),
+    rename        = require('gulp-rename'),
     react        = require('gulp-react');
 
 gulp.task('styles', function () {
@@ -23,7 +24,10 @@ gulp.task('styles', function () {
 });
 
 gulp.task('components:move', function () {
-  gulp.src('bower_components/react/react-with-addons.min.js')
+  if (argv.production){var reactSource = "react-with-addons.min.js"}
+  else {var reactSource = "react-with-addons.js"}
+  gulp.src('bower_components/react/' + reactSource)
+  .pipe(rename("react.js"))
   .pipe(gulp.dest('assets/dist'));
 });
 

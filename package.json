@@ -29,6 +29,7 @@
     "gulp-uglify": "^1.2.0",
     "gulp-util": "*",
     "gulp-react": "3.0.1",
+    "gulp-rename": "1.2.2",
     "jshint-stylish": "^2.0.1",
     "minimist": "^1.1.1"
   }
