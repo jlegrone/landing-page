@@ -25,9 +25,14 @@ var ExperienceRowComponent = React.createClass({
             );
         });
         return (
-            <div className="container">
-                <div className="row">
+            <div>
+                <div className="highlight">
+                    <h2 className="container">Skills</h2>
+                </div>
+                <div className="container">
+                    <div className="row">
                     {columnNodes}
+                    </div>
                 </div>
             </div>
         );
@@ -106,6 +111,9 @@ var ProjectRowComponent = React.createClass({
         });
         return (
             <div>
+                <div className="highlight">
+                    <h2 className="container">Sample Projects</h2>
+                </div>
                 {projectNodes}
             </div>
         );

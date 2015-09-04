@@ -17,6 +17,9 @@
     "url": "https://github.com/jlegrone/jlegrone.github.io/issues"
   },
   "homepage": "https://github.com/jlegrone/jlegrone.github.io",
+  "dependencies": {
+    "smooth-scroll": "cferdinandi/smooth-scroll"
+  },
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
@@ -31,6 +34,7 @@
     "gulp-react": "3.0.1",
     "gulp-rename": "1.2.2",
     "jshint-stylish": "^2.0.1",
-    "minimist": "^1.1.1"
+    "minimist": "^1.1.1",
+    "react": "0.13.3"
   }
 }

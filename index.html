@@ -14,17 +14,34 @@ Thanks for checking out my portfolio! To view the source for this site, please v
         <meta name="theme-color" content="rgb(49,176,144)">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="assets/dist/main.css">
-        <link href='https://fonts.googleapis.com/css?family=Lato:600,400,300|Oswald' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lato:600,400,300|Oswald:300,400,700|Raleway:200,400,800' rel='stylesheet' type='text/css'>
         <script src="assets/dist/react.js"></script>
     </head>
     <body>
-        <section id="about">
+
+        <header id="large-header" class="large-header">
+            <canvas id="demo-canvas"></canvas>
+            <div id="main-title" class="main-title-loading">
+                <h1>Jacob<span class="thin">L<span class="lower">e</span>Grone</span></h1>
+                <div class="row container">
+                <a class="button three columns" href="#about" data-scroll>About</a>
+                <a class="button three columns" href="#samples" data-scroll>Projects</a>
+                <a class="button three columns" href="#skills" data-scroll>Skills</a>
+                <a class="button three columns" href="#contact" data-scroll>Contact</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="about" class="dark">
+            <div class="highlight">
+                <h2 class="container">About Jacob</h2>
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="six columns">
-                        <h1>About Jacob LeGrone</h1>
+                        <!-- <h1>About Jacob</h1> -->
                         <p class="lead">Hi, I'm a web developer located in Charlotte, North Carolina.</p>
-                        <p class="lead">Below you will find some of my work.</p>
+                        <p class="lead">I specialize in front end development and responsive design. Below you will find some of my work.</p>
                     </div>
                     <div class="six columns">
 <pre><code>var jacob = {
@@ -40,20 +57,14 @@ Thanks for checking out my portfolio! To view the source for this site, please v
                 </div>
             </div>
         </section>
-        <div class="highlight">
-            <h2 class="container">Projects</h2>
-        </div>
         <section id="samples">
         </section>
-        <div class="highlight">
-            <h2 class="container">Skills</h2>
-        </div>
-        <section id="skills" class="dark">
+        <section id="skills">
         </section>
-        <div class="highlight">
-            <h2 class="container">Contact</h2>
-        </div>
-        <section id="contact">
+        <section id="contact" class="dark">
+            <div class="highlight">
+                <h2 class="container">Contact</h2>
+            </div>
             <div class="container">
                 <form action="//formspree.io/dev@jacoblegrone.com" method="POST" id="contact_form">
                   <div class="row">
@@ -73,6 +84,7 @@ Thanks for checking out my portfolio! To view the source for this site, please v
                 </form>
             </div>
         </section>
+        <script src="assets/dist/vendor.js"></script>
         <script src="assets/dist/main.js"></script>
     </body>
 </html>

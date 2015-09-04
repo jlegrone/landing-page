@@ -1,4 +1,10 @@
 (function() {
+
+	smoothScroll.init({
+	    speed: 300,
+	    easing: 'easeOutCubic',
+	    updateURL: false
+	});
 	
 	var contact_form = document.forms.contact_form;
 	var contact_section = document.getElementById('contact');
