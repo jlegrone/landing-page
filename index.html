@@ -18,14 +18,15 @@ Thanks for checking out my portfolio! To view the source for this site, please v
         <script src="assets/dist/react.js"></script>
     </head>
     <body>
-        <div class="container">
-            <div class="row intro">
-                <div class="six columns">
-                    <h1>About Jacob LeGrone</h1>
-                    <p class="lead">Hi, I'm a web developer located in Charlotte, North Carolina.</p>
-                    <p class="lead">Below you will find some of my work.</p>
-                </div>
-                <div class="six columns">
+        <section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="six columns">
+                        <h1>About Jacob LeGrone</h1>
+                        <p class="lead">Hi, I'm a web developer located in Charlotte, North Carolina.</p>
+                        <p class="lead">Below you will find some of my work.</p>
+                    </div>
+                    <div class="six columns">
 <pre><code>var jacob = {
     location: "Charlotte NC",
     role: "Front-end Dev",
@@ -35,25 +36,26 @@ Thanks for checking out my portfolio! To view the source for this site, please v
     },
     hobbies: ["dance", "music", "disc golf"]
 };</code></pre>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
         <div class="highlight">
             <h2 class="container">Projects</h2>
         </div>
         <section id="samples">
         </section>
         <div class="highlight">
-            <h2 class="container">Experience</h2>
+            <h2 class="container">Skills</h2>
         </div>
-        <section id="experience" class="dark">
+        <section id="skills" class="dark">
         </section>
         <div class="highlight">
-            <h2 class="container">Contact Jacob</h2>
+            <h2 class="container">Contact</h2>
         </div>
         <section id="contact">
             <div class="container">
-                <form action="//formspree.io/dev@jacoblegrone.com" method="POST">
+                <form action="//formspree.io/dev@jacoblegrone.com" method="POST" id="contact_form">
                   <div class="row">
                     <div class="six columns">
                       <label for="exampleEmailInput">Your name</label>
@@ -61,11 +63,11 @@ Thanks for checking out my portfolio! To view the source for this site, please v
                     </div>
                     <div class="six columns">
                       <label for="exampleEmailInput">Your email</label>
-                      <input class="u-full-width" type="email" placeholder="mail@example.com" name="_replyto" required>
+                      <input class="u-full-width" type="email" placeholder="mail@example.com" name="replyto" required>
                     </div>
                   </div>
                   <label for="exampleMessage">Message</label>
-                  <textarea class="u-full-width" placeholder="Hi Jacob …" name="body" required></textarea>
+                  <textarea class="u-full-width" placeholder="Hi Jacob …" name="message" required></textarea>
                   <input type="text" name="_gotcha" style="display:none" />
                   <input class="button-primary u-pull-right" type="submit" value="Send">
                 </form>

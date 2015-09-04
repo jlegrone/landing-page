@@ -5,6 +5,9 @@
 
 // set variables
 
+@heading: 'Oswald', sans-serif;
+@body: 'Lato', sans-serif;
+
 @section-light: white;
 @section-light-text: black;
 
@@ -25,12 +28,12 @@
 }
 
 body, p {
-  font-family: 'Lato', sans-serif;
+  font-family: @body;
   font-weight:300;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Oswald', sans-serif;
+  font-family: @heading;
   color: @dark-text;
 }
 
@@ -54,12 +57,8 @@ code {
   font-size: 20px;
 }
 
-.intro {
-  margin: 2em 0 4em;
-}
-
-body, section {
-  padding: 2em 0 1em;
+section {
+  padding: 2em 0 2em;
 }
 
 .container {
@@ -250,4 +249,43 @@ ul.siteTags {
 
 .dark {
   background-color: @section-dark;
+}
+
+#contact {
+  transition: all 0.5s ease;
+  position: relative;
+
+/*  &:hover {
+    transform: translateX(100%);
+  }*/
+}
+
+.form-sending {
+  opacity: 0.5;
+  /*background-color: ;*/
+  /*transform: translateX(-10%);*/
+}
+
+.form-sent {
+  background-color: lighten(@highlight-color, 50%);
+
+  &:before {
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 120px;
+    line-height: 60px;
+    font-family: @body;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 0.01px;
+    color: @highlight-text-color;
+    content: "Thanks! I'll be in touch.";
+  }
+
+  form {
+    visibility: hidden;
+  }
+  /*transform: translateX(100%);*/
 }

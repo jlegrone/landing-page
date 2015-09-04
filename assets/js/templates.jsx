@@ -119,5 +119,5 @@ React.render(
 
 React.render(
     <ExperienceRowComponent data={expInfo} />,
-    document.getElementById('experience')
+    document.getElementById('skills')
 );
