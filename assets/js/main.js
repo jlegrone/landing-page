@@ -1,7 +1,7 @@
 (function() {
 
 	smoothScroll.init({
-	    speed: 300,
+	    speed: 500,
 	    easing: 'easeOutCubic',
 	    updateURL: false
 	});

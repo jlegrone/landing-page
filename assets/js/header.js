@@ -7,7 +7,7 @@
     // Main
     initHeader();
     addListeners();
-    window.setTimeout(showHeaderContent, 400);
+    window.setTimeout(showHeaderContent, 500);
 
     function showHeaderContent(){
         document.getElementById('main-title').className = '';
