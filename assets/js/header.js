@@ -1,8 +1,8 @@
 (function() {
 
     var width, height, canvas, ctx, circles, target, yVector, xVector, hypot, animateHeader = true;
-    var hoverRadius = 3000;
-    var accelMultiplier = -0.01;
+    var hoverRadius = 70;
+    var accelMultiplier = -0.1;
     var largeHeader = document.getElementById('large-header');
 
     // Main
@@ -101,7 +101,7 @@
         }
 
         function getRandomIntInclusive(min, max) {
-            return (Math.floor(Math.random() * (max - min + 1)) + min)*0.05;
+            return (Math.floor(Math.random() * (max - min + 1)) + min)*0.07;
         }
 
         this.draw = function() {
@@ -115,8 +115,10 @@
 
             hypot = Math.sqrt(xVector*xVector + yVector*yVector)
 
-            _this.Yvelocity = _this.Yvelocity + yVector/(hypot*hypot*_this.scale*_this.scale) * accelMultiplier;
-            _this.Xvelocity = _this.Xvelocity + xVector/(hypot*hypot*_this.scale*_this.scale) * accelMultiplier;
+            if (hypot < hoverRadius){
+                _this.Yvelocity = _this.Yvelocity + yVector/(hypot*hypot*_this.scale*_this.scale) * accelMultiplier;
+                _this.Xvelocity = _this.Xvelocity + xVector/(hypot*hypot*_this.scale*_this.scale) * accelMultiplier;
+            }
 
             _this.pos.y += _this.Yvelocity;
             _this.pos.x += _this.Xvelocity;
