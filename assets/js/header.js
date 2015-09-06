@@ -1,7 +1,8 @@
 (function() {
 
-    var width, height, canvas, ctx, circles, target, yAccel, xAccel, animateHeader = true;
-    var hoverRadius = 50;
+    var width, height, canvas, ctx, circles, target, yVector, xVector, hypot, animateHeader = true;
+    var hoverRadius = 3000;
+    var accelMultiplier = -0.01;
     var largeHeader = document.getElementById('large-header');
 
     // Main
@@ -93,46 +94,35 @@
         function init(fromOrigin) {            
             _this.pos.x = Math.random()*width;
             _this.pos.y = Math.random()*height;
-            _this.scale = 0.1+Math.random()*0.1;
+            _this.scale = 0.1+Math.random()*0.15;
             _this.alpha = 0.1+Math.random()*0.8;
             _this.Xvelocity = getRandomIntInclusive(-1, 1);
             _this.Yvelocity = getRandomIntInclusive(-1, 1);
         }
 
         function getRandomIntInclusive(min, max) {
-            return (Math.floor(Math.random() * (max - min + 1)) + min)*0.1;
+            return (Math.floor(Math.random() * (max - min + 1)) + min)*0.05;
         }
 
-        var yPos, xPos, hypot = true;
-
         this.draw = function() {
-            if(_this.alpha <= 0) {
+            // reinitialize if circle becomes transparent or goes off canvas
+            if(_this.alpha <= 0 || _this.pos.x > width || _this.pos.y > height) {
                 init();
             }
 
-            yPos = _this.pos.y - target.y;
-            xPos = _this.pos.x - target.x;
+            yVector = _this.pos.y - target.y;
+            xVector = _this.pos.x - target.x;
 
-            hypot = Math.sqrt(xPos*xPos + yPos*yPos)
+            hypot = Math.sqrt(xVector*xVector + yVector*yVector)
 
-            if (hypot <= hoverRadius){
-                ctx.fillStyle = 'rgba(69,196,164,'+ _this.alpha+')';
-                _this.yAccel = 1/yPos*30;
-                _this.xAccel = 1/xPos*30;
-            }
-            else if (!_this.yAccel) {
-                _this.yAccel = _this.Yvelocity;
-                _this.xAccel = _this.Xvelocity;
-                ctx.fillStyle = 'rgba(255,255,255,'+ _this.alpha+')';
-            }
-            else {
-                ctx.fillStyle = 'rgba(255,255,255,'+ _this.alpha+')';
-            }
+            _this.Yvelocity = _this.Yvelocity + yVector/(hypot*hypot*_this.scale*_this.scale) * accelMultiplier;
+            _this.Xvelocity = _this.Xvelocity + xVector/(hypot*hypot*_this.scale*_this.scale) * accelMultiplier;
 
-            _this.pos.y += _this.yAccel;
-            _this.pos.x += _this.xAccel;
+            _this.pos.y += _this.Yvelocity;
+            _this.pos.x += _this.Xvelocity;
             _this.alpha -= 0.0005;
             ctx.beginPath();
+            ctx.fillStyle = 'rgba(255,255,255,'+ _this.alpha+')';
             ctx.arc(_this.pos.x, _this.pos.y, _this.scale*10, 0, 2 * Math.PI, false);
             ctx.fill();
         };
