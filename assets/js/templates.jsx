@@ -1,9 +1,11 @@
 var ExperienceColumnComponent = React.createClass({
     render: function() {
-        var listItems = this.props.data.items.map(function(item) {
+        var listItems = this.props.data.items.map(function(item, index) {
             return (
-                <span>{item[0]}
-                <li>{item[1]}</li></span>
+                <span key={'item' + index}>
+                    {item[0]}
+                    <li>{item[1]}</li>
+                </span>
             );
         });
         return (
@@ -19,9 +21,9 @@ var ExperienceColumnComponent = React.createClass({
 
 var ExperienceRowComponent = React.createClass({
     render: function() {
-        var columnNodes = this.props.data.map(function (column) {
+        var columnNodes = this.props.data.map(function (column, index) {
             return (
-                <ExperienceColumnComponent data={column}/>
+                <ExperienceColumnComponent key={'column' + index} data={column}/>
             );
         });
         return (
@@ -41,9 +43,9 @@ var ExperienceRowComponent = React.createClass({
 
 var SiteInfoComponent = React.createClass({
     render: function() {
-        var tags = this.props.data.tags.map(function(tag) {
+        var tags = this.props.data.tags.map(function(tag, index) {
             return (
-                <li>{tag}</li>
+                <li key={'tag' + index}>{tag}</li>
             );
         });
         return (
@@ -101,7 +103,7 @@ var ProjectRowComponent = React.createClass({
             var siteView = <SitePreviewComponent views={site.views}/>;
             var siteInfo = <SiteInfoComponent data={site}/>;
             return (
-                <div className="row projectRow">
+                <div key={'project' + index} className="row projectRow">
                     <div className="container">
                         {siteView}
                         {siteInfo}

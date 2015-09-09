@@ -22,13 +22,25 @@ Thanks for checking out my portfolio! To view the source for this site, please v
             <canvas id="demo-canvas"></canvas>
             <div id="main-title" class="main-title-loading">
                 <h1>Jacob<span class="thin">L<span class="lower">e</span>Grone</span></h1>
-                <div class="row container">
-                <a class="button three columns" href="#about" data-scroll>About</a>
-                <a class="button three columns" href="#samples" data-scroll>Projects</a>
-                <a class="button three columns" href="#skills" data-scroll>Skills</a>
-                <a class="button three columns" href="#contact" data-scroll>Contact</a>
-                </div>
+                <nav class="row container">
+                    <a class="button three columns" href="#about" data-scroll>About</a>
+                    <a class="button three columns" href="#samples" data-scroll>Projects</a>
+                    <a class="button three columns" href="#skills" data-scroll>Skills</a>
+                    <a class="button three columns" href="#contact" data-scroll>Contact</a>
+                </nav>
             </div>
+            <div class="morph-button">
+                <div class="morph-content">
+                    <form id="animation_settings">
+                        <label for="effectradius">Effect Radius</label>
+                        <input id="effectradius" name="effectradius" type="range" min="0" max="100" step="1" value="5" defaultValue="5" />
+                        <label for="acceleration">Acceleration</label>
+                        <input id="acceleration" name="acceleration" type="range" min="-0.3" max="0.3" step="0.01" value="-0.05" defaultValue="-0.05" />
+                        <input type="reset" value="reset"/>
+                    </form>
+                </div>
+                <i class="icon-settings"></i>
+            </div><!-- morph-button -->
         </header>
         <section id="about" class="dark">
             <div class="highlight">
@@ -67,15 +79,15 @@ Thanks for checking out my portfolio! To view the source for this site, please v
                 <form action="//formspree.io/dev@jacoblegrone.com" method="POST" id="contact_form">
                   <div class="row">
                     <div class="six columns">
-                      <label for="exampleEmailInput">Your name</label>
+                      <label for="name">Your name</label>
                       <input class="u-full-width" type="text" placeholder="Name" name="name">
                     </div>
                     <div class="six columns">
-                      <label for="exampleEmailInput">Your email</label>
+                      <label for="replyto">Your email</label>
                       <input class="u-full-width" type="email" placeholder="mail@example.com" name="replyto" required>
                     </div>
                   </div>
-                  <label for="exampleMessage">Message</label>
+                  <label for="message">Message</label>
                   <textarea class="u-full-width" placeholder="Hi Jacob …" name="message" required></textarea>
                   <input type="text" name="_gotcha" style="display:none" />
                   <input class="button-primary u-pull-right" type="submit" value="Send">
@@ -83,7 +95,11 @@ Thanks for checking out my portfolio! To view the source for this site, please v
             </div>
         </section>
         <footer>
-            © 2015 Jacob LeGrone | dev@jacoblegrone.com
+            <ul>
+                <li>© 2015 Jacob LeGrone</li>
+                <li><a href="mailto:dev@jacoblegrone.com">dev@jacoblegrone.com</a></li>
+                <li><a href="https://github.com/jlegrone">github.com/jlegrone</a></li>
+            </ul>
         </footer>
         <script src="assets/dist/vendor.js"></script>
         <script src="assets/dist/main.js"></script>

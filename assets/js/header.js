@@ -1,37 +1,69 @@
 (function() {
 
-    var width, height, canvas, ctx, circles, target, yVector, xVector, hypot, animateHeader = true;
-    var hoverRadius = 70;
-    var accelMultiplier = -0.1;
-    var largeHeader = document.getElementById('large-header');
+    var canvas, largeHeader, width, height, hoverRadius, hoverRadiusMultiplier, accelMultiplier, ctx, circles, target, yVector, xVector, hypot, animateHeader = true;
 
     // Main
     initHeader();
     addListeners();
-    window.setTimeout(showHeaderContent, 500);
-
-    function showHeaderContent(){
-        document.getElementById('main-title').className = '';
-    }
 
     function initHeader() {
+        largeHeader = document.getElementById('large-header');
+        canvas = document.getElementById('demo-canvas');
+
+        // Set canvas sizing
+        setSizing()
+
+        // calc hoverRadius and accelMultiplier constants
+        setConstants();
+
+        ctx = canvas.getContext('2d');
+        target = {x: 9999999, y: 9999999};
+
+        // initialize circles
+        addCircles();
+        animate();
+
+        // Display header text & menu
+        window.setTimeout(showHeaderContent, 500);
+
+        function showHeaderContent(){
+            document.getElementById('main-title').className = '';
+        }
+    }
+
+    function setSizing() {
         width = window.innerWidth;
         height = window.innerHeight;
-        target = {x: 9999999, y: 9999999};
         largeHeader.style.height = height+'px';
-
-        canvas = document.getElementById('demo-canvas');
         canvas.width = width;
         canvas.height = height;
-        ctx = canvas.getContext('2d');
+        hoverRadius = width * hoverRadiusMultiplier;
+    }
 
-        // create particles
+    function setConstants(e){
+        var form = document.getElementById('animation_settings');
+        if (e && e.type == "reset"){
+            accelMultiplier = form.acceleration.defaultValue;
+            hoverRadiusMultiplier = form.effectradius.defaultValue;
+        }
+        else {
+            accelMultiplier = form.acceleration.value;
+            hoverRadiusMultiplier = form.effectradius.value;
+        }
+        hoverRadius = width * hoverRadiusMultiplier/100;
+
+        form.acceleration.title = accelMultiplier.toString() + " px/sec^2";
+        form.effectradius.title = hoverRadius.toString() + " pixels";
+    }
+
+    // Create particles
+    function addCircles(){
         circles = [];
         for(var x = 0; x < width*0.5; x++) {
             var c = new Circle();
+            c.init();
             circles.push(c);
         }
-        animate();
     }
 
     // Event handling
@@ -40,7 +72,9 @@
             window.addEventListener('mousemove', mouseMove);
         }
         window.addEventListener('scroll', scrollCheck);
-        window.addEventListener('resize', resize);
+        document.getElementById('animation_settings').addEventListener('change', setConstants, false);
+        document.getElementById('animation_settings').addEventListener('reset', setConstants, false);
+        optimizedResize.add(resize);
     }
 
     function mouseMove(e) {
@@ -63,11 +97,10 @@
     }
 
     function resize() {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        largeHeader.style.height = height+'px';
-        canvas.width = width;
-        canvas.height = height;
+        // Set canvas sizing
+        setSizing();
+        // Fill new canvas with circles
+        addCircles();
     }
 
     function animate() {
@@ -84,30 +117,24 @@
     function Circle() {
         var _this = this;
 
-        // constructor
-        (function() {
-            _this.pos = {};
-            init();
-            // console.log(_this);
-        })();
-
-        function init(fromOrigin) {            
+        this.init = function() {  
+            _this.pos = {};          
             _this.pos.x = Math.random()*width;
             _this.pos.y = Math.random()*height;
             _this.scale = 0.1+Math.random()*0.15;
             _this.alpha = 0.1+Math.random()*0.8;
             _this.Xvelocity = getRandomIntInclusive(-1, 1);
             _this.Yvelocity = getRandomIntInclusive(-1, 1);
-        }
 
-        function getRandomIntInclusive(min, max) {
-            return (Math.floor(Math.random() * (max - min + 1)) + min)*0.07;
+            function getRandomIntInclusive(min, max) {
+                return (Math.random() * (max - min) + min)*0.05;
+            }
         }
 
         this.draw = function() {
             // reinitialize if circle becomes transparent or goes off canvas
-            if(_this.alpha <= 0 || _this.pos.x > width || _this.pos.y > height) {
-                init();
+            if(_this.pos.x > width || _this.pos.x < 0 || _this.pos.y > height || _this.pos.y < 0) {
+                _this.init();
             }
 
             yVector = _this.pos.y - target.y;
@@ -122,7 +149,6 @@
 
             _this.pos.y += _this.Yvelocity;
             _this.pos.x += _this.Xvelocity;
-            _this.alpha -= 0.0005;
             ctx.beginPath();
             ctx.fillStyle = 'rgba(255,255,255,'+ _this.alpha+')';
             ctx.arc(_this.pos.x, _this.pos.y, _this.scale*10, 0, 2 * Math.PI, false);

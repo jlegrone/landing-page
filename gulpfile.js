@@ -13,7 +13,8 @@ var argv         = require('minimist')(process.argv.slice(2)),
     react        = require('gulp-react');
 
 gulp.task('styles', function () {
-  return gulp.src('assets/styles/main.less')
+  return gulp.src('assets/styles/*.less')
+  .pipe(concat('main.less'))
   .pipe(less())
   .pipe(autoprefixer({
     browsers: ['> 97%', 'last 2 versions', 'Firefox 3.5', 'Opera 12.1', 'Safari 4.0'],

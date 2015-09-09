@@ -47,6 +47,33 @@ footer {
   font-weight: 400;
   background-color: lighten(@section-dark, 5%);
   padding: 10px;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      line-height: 1em;
+      padding: 0 1em;
+      margin: 0;
+      border-right: 1px solid darken(@section-dark-text, 20%);
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: lighten(@highlight-color, 20%);
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -144,10 +171,6 @@ label {
 .highlight + * {
   padding-top: 3em;
   padding-bottom: 3em;
-}
-
-#samples {
-  padding: 0;
 }
 
 /*
@@ -341,107 +364,11 @@ ul.siteTags {
   form {
     visibility: hidden;
   }
-  /*transform: translateX(100%);*/
 }
 
 
 #about {
-  h1,h2,h3,h4,h5,h6, p {
-    /*color: @dark-text;*/
-  }
-
   code {
     background: darken(white, 10%);
-  }
-}
-
-
-/* Animated Header */
-
-.large-header {
-  position: relative;
-  width: 100%;
-  background: #333;
-  background-image: url('@{imagePath}space.jpg');
-  overflow: hidden;
-  background-size: cover;
-  background-position: center center;
-  z-index: 1;
-}
-
-#main-title {
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  top: 50%;
-  left: 50%;
-  opacity: 1;
-  width: 100%;
-  transition: all 0.5s ease;
-  transform: translate3d(-50%,-50%,0);
-
-  &.main-title-loading {
-    opacity: 0;
-    transform: translate3d(-50%,-55%,0)scale(0.95, 0.95);
-  }
-
-  h1 {
-    text-transform: uppercase;
-    font-size: 6em;
-    font-weight: 800;
-    font-family: @heading;
-    letter-spacing: 0.1em;
-    text-align: center;
-    text-transform: uppercase;
-    color: @section-dark-text;
-  }
-
-  .thin {
-    font-weight: 300;
-    display: block;
-    /*font-size: 0.8em;*/
-    /*letter-spacing: 0.01em;*/
-  }
-
-  .lower {
-    text-transform: none;
-  }
-
-  .container {
-    max-width: 500px;
-  }
-  .button {
-    color: white;
-    text-align: center;
-    text-transform: none;
-    font-size: 1.2em;
-    font-family: @heading;
-    border: none;
-    border-radius: 0;
-    padding: 0;
-    transition: all 0.5s ease;
-
-    &:hover {
-      background-color: fade(@highlight-color, 50%);
-    }
-  }
-
-  @media @tablet {
-    h1 {
-      font-size: 4em;
-    }
-  }
-
-  @media @phone {
-    h1 {
-      font-size: 3em;
-      font-weight: 300;
-      text-transform: none;
-    }
-
-    .thin {
-      margin-left: 0.3em;
-      display: inline;
-    }
   }
 }
