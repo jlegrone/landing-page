@@ -126,20 +126,20 @@ var expInfo = [
     {
         heading: "Tools & Software",
         items: [
-            ["Frameworks & Libraries", "Bootstrap, Django, React.js, D3.js, jQuery"],
+            ["Frameworks & Libraries", "React.js, D3.js, jQuery, Django, Bootstrap"],
             ["Build Tools", "NPM, Bower, Gulp/Grunt, SASS/LESS"],
             ["Image Manipulation", "GIMP, PhotoShop, Illustrator"],
-            ["Other Software Packages", "ArcGIS, Google Earth, R, Excel"]
+            ["Other Software Packages", "ArcGIS, Google Earth, R, Excel, NumPy, SciPy, Matplotlib"]
         ]
     },
     {
         heading: "Web APIs",
         items: [
-            [null, "Google Maps JavaScript V3"],
-            [null, "Facebook JavaScript & Python SDK"],
+            [null, "Google Maps JavaScript API V3"],
+            [null, "Facebook Graph API"],
             [null, "Google Docs, Calendar, and Mail APIs"],
             [null, "Mandrill & Mailchimp REST APIs"],
-            [null, "PayPal Instant Payment Notification"]
+            [null, "PayPal & Stripe APIs"]
         ]
     }
 ];

@@ -24,7 +24,7 @@
   height: 50px;
   padding: 20px;
   text-align: left;
-  transition: 0.5s ease;
+  transition: 0.7s ease;
   transition-property: height, width, border-radius;
 
   .icon-settings {
@@ -39,18 +39,22 @@
     bottom: 0;
     right: 0;
     opacity: 1;
-    transition: 0.5s ease;
+    transition: 0.7s ease;
     transition-property: transform, opacity;
   }
 
   label {
     text-align: center;
     font-size: 12px;
+    height: 19px;
+    margin-bottom: 3px;
   }
 
   input[type=range] {
     width: 100%;
     cursor: pointer;
+    margin-bottom: 0;
+    height: 27px;
   }
 
   input[type=reset] {
@@ -58,6 +62,10 @@
     background: fade(black, 30%);
     border: none;
     color: white;
+    font-weight: 400;
+    font-size: 12px;
+    height: 38px;
+    margin-top: 5px;
 
     &:focus {
       color: white;
@@ -76,15 +84,15 @@
 
   .morph-content {
     opacity: 0;
-    transition: opacity 0.5s ease;
-    transition-delay: 0.4s;
+    transition: opacity 0.7s ease;
+    transition-delay: 0.2s;
   }
 
   &:hover {
     background-color: fade(@highlight-color, 90%);
     width: 192px;
     height: 192px;
-    border-radius: 0;
+    border-radius: 3px;
 
     label, input {
       visibility: visible;
@@ -92,7 +100,7 @@
 
     .icon-settings {
       opacity: 0;
-      transform: translate(-150%,-150%)rotate(-180deg)scale(4,4);
+      transform: translate(-140%, -140%)rotate(-90deg)scale(4,4);
     }
 
     .morph-content {

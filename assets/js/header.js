@@ -52,8 +52,8 @@
         }
         hoverRadius = width * hoverRadiusMultiplier/100;
 
-        form.acceleration.title = accelMultiplier.toString() + " px/sec^2";
-        form.effectradius.title = hoverRadius.toString() + " pixels";
+        form.acceleration.title = Math.floor(1000 * accelMultiplier/form.acceleration.max)/10 + "%";
+        form.effectradius.title = Math.floor(hoverRadius).toString() + " pixels";
     }
 
     // Create particles

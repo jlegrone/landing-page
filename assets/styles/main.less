@@ -46,11 +46,12 @@ footer {
   font-size: 0.9em;
   font-weight: 400;
   background-color: lighten(@section-dark, 5%);
-  padding: 10px;
+  /*padding: 10px;*/
 
   ul {
     list-style-type: none;
     margin: 0;
+    padding: 10px;
 
     li {
       display: inline-block;
@@ -61,6 +62,23 @@ footer {
 
       &:last-child {
         border-right: none;
+      }
+    }
+
+    @media @phone {
+      padding: 0;
+      
+      li {
+        display: block;
+        padding: 15px 0;
+        border-right: none;
+        border-bottom: 1px solid darken(@section-dark-text, 20%);
+        max-width: 200px;
+        margin: 0 auto;
+
+        &:last-child {
+          border-bottom: none;
+        }
       }
     }
 
