@@ -37,7 +37,7 @@
         largeHeader.style.height = height+'px';
         canvas.width = width;
         canvas.height = height;
-        hoverRadius = width * hoverRadiusMultiplier;
+        setConstants();
     }
 
     function setConstants(e){

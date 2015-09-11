@@ -150,7 +150,9 @@ code {
 input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
     border-radius: 0;
     background-color: lighten(@section-light, 5%);
-    transition: all 0.5s ease;
+    border: 2px solid lighten(@section-light, 5%);
+    transition: all 0.2s ease;
+    font-size: 1.05em;
     font-weight: 400;
 }
 
