@@ -48,7 +48,14 @@ gulp.task('jsx:compile', function (callback) {
 });
 
 gulp.task('js:vendor', ['jsx:compile'], function () {
-  var stream = gulp.src('assets/js/vendor/*.js')
+  var path = 'assets/js/vendor/';
+  var stream = gulp.src([
+                  path + 'ga.js',
+                  path + 'minAjax.js',
+                  path + 'optimized-resize.js',
+                  path + 'plugins.js',
+                  path + 'smooth-scroll.js'
+                ])
                .pipe(concat('vendor.js'))
                .pipe(gulpif(argv.production, uglify().on('error', gutil.log)))
                .pipe(gulp.dest('assets/dist'));
