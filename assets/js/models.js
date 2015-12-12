@@ -118,28 +118,28 @@ var expInfo = [
         heading: "Software Stack",
         items: [
             ["Front end", "HTML5, CSS3, JavaScript"],
-            ["Back end", "Python, PHP, Node.js"],
-            ["Databases", "NDB (NoSQL), MySQL"],
+            ["Back end", "Python, Node.js"],
+            ["Databases", "NDB (NoSQL), Postgres, GraphQl"],
             ["Platforms", "Google AppEngine, Heroku, Wordpress"]
         ]
     },
     {
         heading: "Tools & Software",
         items: [
-            ["Frameworks & Libraries", "React.js, D3.js, jQuery, Django, Bootstrap"],
-            ["Build Tools", "NPM, Bower, Gulp/Grunt, SASS/LESS"],
-            ["Image Manipulation", "GIMP, PhotoShop, Illustrator"],
+            ["Frameworks & Libraries", "React, Relay, D3, jQuery, Django, Bootstrap"],
+            ["Build Tools", "NPM, Babel, Webpack, Gulp, SASS & LESS"],
+            ["Image Manipulation", "GIMP, PhotoShop"],
             ["Other Software Packages", "ArcGIS, Google Earth, R, Excel, NumPy, SciPy, Matplotlib"]
         ]
     },
     {
         heading: "Web APIs",
         items: [
-            [null, "Google Maps JavaScript API V3"],
+            [null, "Google Maps JavaScript API"],
             [null, "Facebook Graph API"],
-            [null, "Google Docs, Calendar, and Mail APIs"],
-            [null, "Mandrill & Mailchimp REST APIs"],
-            [null, "PayPal & Stripe APIs"]
+            [null, "Google Docs, Calendar, Apps Script"],
+            [null, "Mandrill, Mailchimp, and Mailgun"],
+            [null, "PayPal & Stripe"]
         ]
     }
 ];
