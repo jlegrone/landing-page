@@ -1,5 +1,33 @@
 var webSamples = [
     {
+        name: "Bernie Sanders 2016 - Ground Control",
+        linkUrl: "organize.berniesanders.com",
+        tags: ["Node.js", "React.js", "Relay", "GraphQl", "Postgres", "Webpack", "Moment.js", "ES6"],
+        description: "Ground Control is the central portal for volunteers who want to get involved with the Sanders campaign and also serves as a hub for managing campaign data, volunteers and events. Jacob's work focuses on event creation and administration.",
+        views: [
+            {
+                title: "Ground Control",
+                displayUrl: "organize.berniesanders.com/admin/events",
+                img: "ground-control-event-admin.png"
+            },
+            {
+                title: "Ground Control",
+                displayUrl: "organize.berniesanders.com/signup",
+                img: "ground-control-signup.png"
+            },
+            {
+                title: "Ground Control",
+                displayUrl: "organize.berniesanders.com/admin/events/create",
+                img: "ground-control-create-event-1.png"
+            },
+            {
+                title: "Ground Control",
+                displayUrl: "organize.berniesanders.com/admin/events/create",
+                img: "ground-control-create-event-2.png"
+            }
+        ]
+    },
+    {
         name: "SC Health Atlas",
         linkUrl: "schealthatlas.org",
         tags: ["Python", "Google Maps API", "ArcGIS", "Web Scraping", "jQuery", "Responsive"],
@@ -92,7 +120,7 @@ var webSamples = [
         name: "Personal Blog",
         linkUrl: "blog.jacoblegrone.com",
         tags: ["HTML5", "CSS3", "Responsive"],
-        description: "I designed the styling for my personal 'contra dance calling' blog, which is hosted on the Tumblr platform.",
+        description: "I developed the theme for my personal 'contra dance calling' blog, where I post dance calling programs and other related material.",
         views: [
             {
                 title: "Jacob LeGrone",
