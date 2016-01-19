@@ -215,7 +215,7 @@ var webSamples = [
     {
         name: "Bernie Sanders 2016 - Ground Control",
         linkUrl: "organize.berniesanders.com",
-        tags: ["Node.js", "React.js", "Relay", "GraphQl", "Postgres", "Webpack", "Moment.js", "ES6", "Heroku"],
+        tags: ["Node", "React", "Relay", "Postgres", "Webpack", "Moment.js", "ES6", "Heroku"],
         description: "Ground Control is the central portal for volunteers who want to get involved with the Sanders campaign and also serves as a hub for managing campaign data, volunteers and events. Jacob works primarily on the Campaign's event management system, database administration, and application deployment.",
         views: [
             {
@@ -230,12 +230,12 @@ var webSamples = [
             },
             {
                 title: "Ground Control",
-                displayUrl: "organize.berniesanders.com/admin/events/create",
+                displayUrl: "organize.berniesanders.com/events/create",
                 img: "ground-control-create-event-1.png"
             },
             {
                 title: "Ground Control",
-                displayUrl: "organize.berniesanders.com/admin/events/create",
+                displayUrl: "organize.berniesanders.com/events/create",
                 img: "ground-control-create-event-2.png"
             }
         ]
@@ -367,10 +367,10 @@ var expInfo = [
     {
         heading: "Tools & Software",
         items: [
-            ["Frameworks & Libraries", "React, Relay, D3, jQuery, Django, Bootstrap"],
+            ["Frameworks & Libraries", "React, Relay, jQuery, Django, Flask, Bootstrap"],
             ["Build Tools", "NPM, Babel, Webpack, Gulp, SASS & LESS"],
             ["Image Manipulation", "GIMP, PhotoShop"],
-            ["Other Software Packages", "ArcGIS, Google Earth, R, Excel, NumPy, SciPy, Matplotlib"]
+            ["Other Software Packages", "ArcGIS, Google Earth, Excel, NumPy, SciPy, Matplotlib"]
         ]
     },
     {
