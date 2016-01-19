@@ -145,10 +145,10 @@ var expInfo = [
     {
         heading: "Software Stack",
         items: [
-            ["Front end", "HTML5, CSS3, JavaScript"],
-            ["Back end", "Python, Node.js"],
-            ["Databases", "NDB (NoSQL), Postgres, GraphQl"],
-            ["Platforms", "Google AppEngine, Heroku, Wordpress"]
+            ["Front end", "React, Relay, GraphQl"],
+            ["Back end", "Node (ES6), Python"],
+            ["Databases", "Postgres, NDB (NoSQL)"],
+            ["Platforms", "Heroku, Google AppEngine, Wordpress"]
         ]
     },
     {
