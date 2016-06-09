@@ -38,7 +38,7 @@
 	    'text-align: center',
 	    'font-weight: bold',
 	    'font-size: 18px',
-	    'font-family: lato'
+	    'font-family: helvetica, arial, sans-serif'
 	];	
 
 	var linkStyle = consoleStyle.slice();
