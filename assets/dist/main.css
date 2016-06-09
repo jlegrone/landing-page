@@ -1259,7 +1259,7 @@ label {
   background-color: #e6e6e6;
 }
 .section-dark {
-  background-color: #333333;
+  background-color: #333;
 }
 .highlight {
   background-color: rgba(49, 176, 144, 0.2);
@@ -1389,7 +1389,7 @@ ul.siteTags li {
   color: black;
 }
 .projectRow:nth-child(2n+1) {
-  background-color: #333333;
+  background-color: #333;
 }
 .projectRow:nth-child(2n+1) .sitePreview {
   float: right;
@@ -1414,7 +1414,7 @@ ul.siteTags li {
   border-color: rgba(72, 204, 171, 0.8);
 }
 .dark {
-  background-color: #333333;
+  background-color: #333;
 }
 .dark h2,
 .dark p,
