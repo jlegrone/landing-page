@@ -2,8 +2,8 @@ var webSamples = [
     {
         name: "Bernie Sanders 2016 - Ground Control",
         linkUrl: "organize.berniesanders.com",
-        tags: ["Node", "React", "Relay", "Postgres", "Webpack", "Moment.js", "ES6", "Heroku"],
-        description: "Ground Control is the central portal for volunteers who want to get involved with the Sanders campaign and also serves as a hub for managing campaign data, volunteers and events. Jacob works primarily on the Campaign's event management system, database administration, and application deployment.",
+        tags: ["Node", "React", "Relay", "GraphQL", "Postgres", "Webpack", "Moment.js", "JavaScript ES7", "Heroku"],
+        description: "Ground Control is the central portal for campaign volunteers and field staff, acting as a hub for managing campaign data, volunteers and events.",
         views: [
             {
                 title: "Ground Control",
