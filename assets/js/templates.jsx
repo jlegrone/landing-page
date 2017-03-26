@@ -19,7 +19,7 @@
                 </div>
             );
         }
-    }); 
+    });
 
     var ExperienceRowComponent = React.createClass({
         render: function() {
@@ -41,7 +41,7 @@
                 </div>
             );
         }
-    }); 
+    });
 
     var SiteInfoComponent = React.createClass({
         render: function() {
@@ -61,9 +61,9 @@
                 </div>
             );
         }
-    }); 
+    });
 
-    var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;  
+    var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
     var SitePreviewComponent = React.createClass({
         getInitialState: function() {
@@ -85,7 +85,7 @@
                 <div className="seven columns sitePreview">
                     <div className="browser_wrapper">
                         <div className="browser_header">
-                            <h1 className="name">{this.props.views[this.state.page].title}</h1>                            
+                            <h1 className="name">{this.props.views[this.state.page].title}</h1>
                             <div className="address_bar"><a href={"http://" + this.props.views[this.state.page].displayUrl}>http://{this.props.views[this.state.page].displayUrl}</a></div>
                         </div>
                         <div className="browser_content">
@@ -97,7 +97,7 @@
                 </div>
             );
         }
-    }); 
+    });
 
     var ProjectRowComponent = React.createClass({
         render: function() {
@@ -116,22 +116,22 @@
             return (
                 <div>
                     <div className="highlight">
-                        <h2 className="container">Sample Projects</h2>
+                        <h2 className="container">Sample Work</h2>
                     </div>
                     {projectNodes}
                 </div>
             );
         }
-    }); 
+    });
 
     React.render(
         <ProjectRowComponent data={webSamples} />,
         document.getElementById('samples')
-    );  
-
-    React.render(
-        <ExperienceRowComponent data={expInfo} />,
-        document.getElementById('skills')
     );
+
+    // React.render(
+    //     <ExperienceRowComponent data={expInfo} />,
+    //     document.getElementById('skills')
+    // );
 
 })();

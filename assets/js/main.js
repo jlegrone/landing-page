@@ -5,7 +5,7 @@
 	    easing: 'easeOutCubic',
 	    updateURL: false
 	});
-	
+
 	var contact_form = document.forms.contact_form;
 	var contact_section = document.getElementById('contact');
 
@@ -39,15 +39,15 @@
 	    'font-weight: bold',
 	    'font-size: 18px',
 	    'font-family: helvetica, arial, sans-serif'
-	];	
+	];
 
 	var linkStyle = consoleStyle.slice();
-	linkStyle[0] = 'color: rgb(49,176,144)';	
+	linkStyle[0] = 'color: rgb(49,176,144)';
 
 	function css(styleArray){
 		return styleArray.join(';');
-	}	
+	}
 
-	console.log("%cThanks for checking out my portfolio! To view the source for this site, please visit %chttps://github.com/jlegrone/jlegrone.github.io%c.", css(consoleStyle), css(linkStyle), css(consoleStyle));
+	console.log("%cWant some source code? Check out %chttps://github.com/jlegrone/jlegrone.github.io%c.", css(consoleStyle), css(linkStyle), css(consoleStyle));
 
 })();

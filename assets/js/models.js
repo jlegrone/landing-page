@@ -1,9 +1,9 @@
 var webSamples = [
     {
-        name: "Bernie Sanders 2016 - Ground Control",
+        name: "Ground Control",
         linkUrl: "organize.berniesanders.com",
         tags: ["Node", "React", "Relay", "GraphQL", "Postgres", "Webpack", "Moment.js", "JavaScript ES7", "Heroku"],
-        description: "Ground Control is the central portal for campaign volunteers and field staff, acting as a hub for managing campaign data, volunteers and events.",
+        description: "Ground Control was the central portal for Bernie 2016 campaign volunteers and field staff, acting as a hub for managing campaign data, volunteers and events.",
         views: [
             {
                 title: "Ground Control",
@@ -93,52 +93,52 @@ var webSamples = [
             }
         ]
     },
-    {
-        name: "Engineers Without Borders USC Chapter",
-        linkUrl: "ewbusc.org",
-        tags: ["PHP", "Bootstrap", "Responsive"],
-        description: "The Student Chapter of EWB-USA at the University of South Carolina (EWB-USC), founded in 2010, is a strong interdisciplinary team from a variety of colleges and majors. Our student members come from the College of Engineering and Computing, the College of Arts and Sciences, the Arnold School of Public Health, and the Darla Moore School of Business.",
-        views: [
-            {
-                title: "EWB | USC Chapter",
-                displayUrl: "www.ewbusc.org",
-                img: "ewbusc.png"
-            },
-            {
-                title: "EWB | USC Chapter",
-                displayUrl: "www.ewbusc.org/events",
-                img: "ewbusc-events.png"
-            },
-            {
-                title: "EWB | USC Chapter",
-                displayUrl: "www.ewbusc.org/projects",
-                img: "ewbusc-projects.png"
-            }
-        ]
-    },
-    {
-        name: "Personal Blog",
-        linkUrl: "blog.jacoblegrone.com",
-        tags: ["HTML5", "CSS3", "Responsive"],
-        description: "I developed the theme for my personal 'contra dance calling' blog, where I post dance calling programs and other related material.",
-        views: [
-            {
-                title: "Jacob LeGrone",
-                displayUrl: "blog.jacoblegrone.com/about",
-                img: "jacobblog.png"
-            },
-            {
-                title: "Jacob LeGrone",
-                displayUrl: "blog.jacoblegrone.com/dances",
-                img: "jacobblog-dances.png"
-            },
-            {
-                title: "Jacob LeGrone",
-                displayUrl: "blog.jacoblegrone.com/post/101954150202/travelers-delight-by-jacob-legrone",
-                img: "jacobblog-post.png"
-            }
-        ]
-    }
+    // {
+    //     name: "Engineers Without Borders USC Chapter",
+    //     linkUrl: "ewbusc.org",
+    //     tags: ["PHP", "Bootstrap", "Responsive"],
+    //     description: "The Student Chapter of EWB-USA at the University of South Carolina (EWB-USC), founded in 2010, is a strong interdisciplinary team from a variety of colleges and majors. Our student members come from the College of Engineering and Computing, the College of Arts and Sciences, the Arnold School of Public Health, and the Darla Moore School of Business.",
+    //     views: [
+    //         {
+    //             title: "EWB | USC Chapter",
+    //             displayUrl: "www.ewbusc.org",
+    //             img: "ewbusc.png"
+    //         },
+    //         {
+    //             title: "EWB | USC Chapter",
+    //             displayUrl: "www.ewbusc.org/events",
+    //             img: "ewbusc-events.png"
+    //         },
+    //         {
+    //             title: "EWB | USC Chapter",
+    //             displayUrl: "www.ewbusc.org/projects",
+    //             img: "ewbusc-projects.png"
+    //         }
+    //     ]
+    // },
+    // {
+    //     name: "Personal Blog",
+    //     linkUrl: "blog.jacoblegrone.com",
+    //     tags: ["HTML5", "CSS3", "Responsive"],
+    //     description: "I developed the theme for my personal 'contra dance calling' blog, where I post dance calling programs and other related material.",
+    //     views: [
+    //         {
+    //             title: "Jacob LeGrone",
+    //             displayUrl: "blog.jacoblegrone.com/about",
+    //             img: "jacobblog.png"
+    //         },
+    //         {
+    //             title: "Jacob LeGrone",
+    //             displayUrl: "blog.jacoblegrone.com/dances",
+    //             img: "jacobblog-dances.png"
+    //         },
+    //         {
+    //             title: "Jacob LeGrone",
+    //             displayUrl: "blog.jacoblegrone.com/post/101954150202/travelers-delight-by-jacob-legrone",
+    //             img: "jacobblog-post.png"
+    //         }
+    //     ]
+    // }
 ];
 
 var expInfo = [

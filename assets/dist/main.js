@@ -164,7 +164,7 @@
 	    easing: 'easeOutCubic',
 	    updateURL: false
 	});
-	
+
 	var contact_form = document.forms.contact_form;
 	var contact_section = document.getElementById('contact');
 
@@ -198,25 +198,25 @@
 	    'font-weight: bold',
 	    'font-size: 18px',
 	    'font-family: helvetica, arial, sans-serif'
-	];	
+	];
 
 	var linkStyle = consoleStyle.slice();
-	linkStyle[0] = 'color: rgb(49,176,144)';	
+	linkStyle[0] = 'color: rgb(49,176,144)';
 
 	function css(styleArray){
 		return styleArray.join(';');
-	}	
+	}
 
-	console.log("%cThanks for checking out my portfolio! To view the source for this site, please visit %chttps://github.com/jlegrone/jlegrone.github.io%c.", css(consoleStyle), css(linkStyle), css(consoleStyle));
+	console.log("%cWant some source code? Check out %chttps://github.com/jlegrone/jlegrone.github.io%c.", css(consoleStyle), css(linkStyle), css(consoleStyle));
 
 })();
 
 var webSamples = [
     {
-        name: "Bernie Sanders 2016 - Ground Control",
+        name: "Ground Control",
         linkUrl: "organize.berniesanders.com",
         tags: ["Node", "React", "Relay", "GraphQL", "Postgres", "Webpack", "Moment.js", "JavaScript ES7", "Heroku"],
-        description: "Ground Control is the central portal for campaign volunteers and field staff, acting as a hub for managing campaign data, volunteers and events.",
+        description: "Ground Control was the central portal for Bernie 2016 campaign volunteers and field staff, acting as a hub for managing campaign data, volunteers and events.",
         views: [
             {
                 title: "Ground Control",
@@ -306,52 +306,52 @@ var webSamples = [
             }
         ]
     },
-    {
-        name: "Engineers Without Borders USC Chapter",
-        linkUrl: "ewbusc.org",
-        tags: ["PHP", "Bootstrap", "Responsive"],
-        description: "The Student Chapter of EWB-USA at the University of South Carolina (EWB-USC), founded in 2010, is a strong interdisciplinary team from a variety of colleges and majors. Our student members come from the College of Engineering and Computing, the College of Arts and Sciences, the Arnold School of Public Health, and the Darla Moore School of Business.",
-        views: [
-            {
-                title: "EWB | USC Chapter",
-                displayUrl: "www.ewbusc.org",
-                img: "ewbusc.png"
-            },
-            {
-                title: "EWB | USC Chapter",
-                displayUrl: "www.ewbusc.org/events",
-                img: "ewbusc-events.png"
-            },
-            {
-                title: "EWB | USC Chapter",
-                displayUrl: "www.ewbusc.org/projects",
-                img: "ewbusc-projects.png"
-            }
-        ]
-    },
-    {
-        name: "Personal Blog",
-        linkUrl: "blog.jacoblegrone.com",
-        tags: ["HTML5", "CSS3", "Responsive"],
-        description: "I developed the theme for my personal 'contra dance calling' blog, where I post dance calling programs and other related material.",
-        views: [
-            {
-                title: "Jacob LeGrone",
-                displayUrl: "blog.jacoblegrone.com/about",
-                img: "jacobblog.png"
-            },
-            {
-                title: "Jacob LeGrone",
-                displayUrl: "blog.jacoblegrone.com/dances",
-                img: "jacobblog-dances.png"
-            },
-            {
-                title: "Jacob LeGrone",
-                displayUrl: "blog.jacoblegrone.com/post/101954150202/travelers-delight-by-jacob-legrone",
-                img: "jacobblog-post.png"
-            }
-        ]
-    }
+    // {
+    //     name: "Engineers Without Borders USC Chapter",
+    //     linkUrl: "ewbusc.org",
+    //     tags: ["PHP", "Bootstrap", "Responsive"],
+    //     description: "The Student Chapter of EWB-USA at the University of South Carolina (EWB-USC), founded in 2010, is a strong interdisciplinary team from a variety of colleges and majors. Our student members come from the College of Engineering and Computing, the College of Arts and Sciences, the Arnold School of Public Health, and the Darla Moore School of Business.",
+    //     views: [
+    //         {
+    //             title: "EWB | USC Chapter",
+    //             displayUrl: "www.ewbusc.org",
+    //             img: "ewbusc.png"
+    //         },
+    //         {
+    //             title: "EWB | USC Chapter",
+    //             displayUrl: "www.ewbusc.org/events",
+    //             img: "ewbusc-events.png"
+    //         },
+    //         {
+    //             title: "EWB | USC Chapter",
+    //             displayUrl: "www.ewbusc.org/projects",
+    //             img: "ewbusc-projects.png"
+    //         }
+    //     ]
+    // },
+    // {
+    //     name: "Personal Blog",
+    //     linkUrl: "blog.jacoblegrone.com",
+    //     tags: ["HTML5", "CSS3", "Responsive"],
+    //     description: "I developed the theme for my personal 'contra dance calling' blog, where I post dance calling programs and other related material.",
+    //     views: [
+    //         {
+    //             title: "Jacob LeGrone",
+    //             displayUrl: "blog.jacoblegrone.com/about",
+    //             img: "jacobblog.png"
+    //         },
+    //         {
+    //             title: "Jacob LeGrone",
+    //             displayUrl: "blog.jacoblegrone.com/dances",
+    //             img: "jacobblog-dances.png"
+    //         },
+    //         {
+    //             title: "Jacob LeGrone",
+    //             displayUrl: "blog.jacoblegrone.com/post/101954150202/travelers-delight-by-jacob-legrone",
+    //             img: "jacobblog-post.png"
+    //         }
+    //     ]
+    // }
 ];
 
 var expInfo = [
@@ -384,6 +384,7 @@ var expInfo = [
         ]
     }
 ];
+
 (function() {
 
     var ExperienceColumnComponent = React.createClass({displayName: "ExperienceColumnComponent",
@@ -405,7 +406,7 @@ var expInfo = [
                 )
             );
         }
-    }); 
+    });
 
     var ExperienceRowComponent = React.createClass({displayName: "ExperienceRowComponent",
         render: function() {
@@ -427,7 +428,7 @@ var expInfo = [
                 )
             );
         }
-    }); 
+    });
 
     var SiteInfoComponent = React.createClass({displayName: "SiteInfoComponent",
         render: function() {
@@ -447,9 +448,9 @@ var expInfo = [
                 )
             );
         }
-    }); 
+    });
 
-    var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;  
+    var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
     var SitePreviewComponent = React.createClass({displayName: "SitePreviewComponent",
         getInitialState: function() {
@@ -483,7 +484,7 @@ var expInfo = [
                 )
             );
         }
-    }); 
+    });
 
     var ProjectRowComponent = React.createClass({displayName: "ProjectRowComponent",
         render: function() {
@@ -502,22 +503,22 @@ var expInfo = [
             return (
                 React.createElement("div", null, 
                     React.createElement("div", {className: "highlight"}, 
-                        React.createElement("h2", {className: "container"}, "Sample Projects")
+                        React.createElement("h2", {className: "container"}, "Sample Work")
                     ), 
                     projectNodes
                 )
             );
         }
-    }); 
+    });
 
     React.render(
         React.createElement(ProjectRowComponent, {data: webSamples}),
         document.getElementById('samples')
-    );  
-
-    React.render(
-        React.createElement(ExperienceRowComponent, {data: expInfo}),
-        document.getElementById('skills')
     );
+
+    // React.render(
+    //     <ExperienceRowComponent data={expInfo} />,
+    //     document.getElementById('skills')
+    // );
 
 })();
