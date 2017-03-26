@@ -28,3 +28,6 @@ node_modules
 
 # Compiled JS
 assets/js/react-jsx-compiled.js
+
+# IDE
+.idea
