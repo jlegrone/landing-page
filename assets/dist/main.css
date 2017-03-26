@@ -1082,6 +1082,7 @@ there.
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
+  font-size: 18px;
   background-color: #e6e6e6;
 }
 html,
@@ -1130,14 +1131,6 @@ footer ul li:last-child {
     border-bottom: none;
   }
 }
-footer ul a {
-  color: inherit;
-  text-decoration: none;
-}
-footer ul a:hover {
-  color: #70d7bd;
-  text-decoration: underline;
-}
 h1,
 h2,
 h3,
@@ -1154,6 +1147,17 @@ ul {
 }
 ul li {
   font-weight: 300;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  color: #70d7bd;
+  text-decoration: underline;
+}
+a.button:hover {
+  text-decoration: none;
 }
 pre {
   margin: 0;
@@ -1457,4 +1461,14 @@ ul.siteTags li {
 }
 #about code {
   background: #e6e6e6;
+}
+#about .content {
+  padding: 100px 0;
+}
+#about .profile {
+  width: 100%;
+  max-width: 200px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
