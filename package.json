@@ -4,6 +4,8 @@
   "description": "Portfolio to display websites developed by Jacob LeGrone",
   "main": "index.js",
   "scripts": {
+    "start": "gulp watch",
+    "serve": "python -m SimpleHTTPServer 3000",
     "build": "gulp build",
     "lint": "gulp lint"
   },
