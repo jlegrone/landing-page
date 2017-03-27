@@ -220,14 +220,15 @@ var webSamples = [
         views: [
             {
                 title: "Ground Control",
-                displayUrl: "organize.berniesanders.com/admin/events",
-                img: "ground-control-event-admin.png"
-            },
-            {
-                title: "Ground Control",
                 displayUrl: "organize.berniesanders.com/signup",
                 img: "ground-control-signup.png"
             },
+            {
+                title: "Ground Control",
+                displayUrl: "organize.berniesanders.com/admin/events",
+                img: "ground-control-event-admin.png"
+            },
+
             {
                 title: "Ground Control",
                 displayUrl: "organize.berniesanders.com/events/create",
