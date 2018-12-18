@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esNext",
+    "lib": ["dom", "es2015"],
+    "strict": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "baseUrl": "./packages",
+    "paths": {
+      "@jlegrone/header/*": ["./header/*"],
+      "@jlegrone/*": ["./*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "target",
+    "packages/header",
+    "packages/www/dist",
+    "packages/www/*.js"
+  ]
+}
