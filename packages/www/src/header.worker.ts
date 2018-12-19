@@ -11,7 +11,7 @@ const canvas = <HTMLCanvasElement>document.getElementById('canvas');
 const context = canvas.getContext("2d");
 const mouse = new MouseState();
 
-function init() {
+export function init() {
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas, false);
   window.addEventListener('mousemove', mouseMove);
@@ -45,5 +45,3 @@ function mouseMove(e: MouseEvent) {
     mouse.y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
   }
 }
-
-init();

@@ -52,8 +52,13 @@ module.exports = {
       use: 'ts-loader',
       exclude: /node_modules/
     }, {
+      test: /\.worker\.js$/,
+      use: {
+        loader: 'worker-loader'
+      }
+    }, {
       test: /\.wasm$/,
-      type: "webassembly/experimental"
+      type: 'webassembly/experimental'
     }, {
       test: /\.(png|jpg|gif)$/i,
       use: [{
