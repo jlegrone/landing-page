@@ -11,7 +11,7 @@
   "scripts": {
     "start": "cd packages/www && yarn start",
     "build:wasm": "rm -rf packages/header && wasm-pack build --out-dir ../../packages/header --scope jlegrone crates/header",
-    "build:www": "rm -rf ./docs && cd packages/www && yarn build && mkdir ../../docs && mv -v ./dist/* ../../docs",
+    "build:www": "cd packages/www && yarn build",
     "build": "yarn build:wasm && yarn build:www"
   },
   "dependencies": {
