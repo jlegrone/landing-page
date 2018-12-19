@@ -1,0 +1,15 @@
+{
+  "name": "@jlegrone/header",
+  "collaborators": [
+    "Jacob LeGrone <npm@jacob.work>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "header_bg.wasm",
+    "header.js",
+    "header.d.ts"
+  ],
+  "module": "header.js",
+  "types": "header.d.ts",
+  "sideEffects": "false"
+}

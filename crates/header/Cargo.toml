@@ -1,0 +1,21 @@
+[package]
+name = "header"
+version = "0.1.0"
+authors = ["Jacob LeGrone <npm@jacob.work>"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+js-sys = "0.3.5"
+
+[dependencies.web-sys]
+version = "0.3.6"
+features = [
+  'CanvasRenderingContext2d',
+  'HtmlCanvasElement',
+]
+
+[dev-dependencies]
+wasm-bindgen-test = "0.2"

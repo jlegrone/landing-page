@@ -1,0 +1,43 @@
+language: rust
+sudo: false
+
+cache: cargo
+
+matrix:
+  include:
+
+  # Builds with wasm-pack.
+  # TODO: re-enable wasm-pack build when workspaces are supported.
+  # - rust: beta
+  #   env: RUST_BACKTRACE=1
+  #   addons:
+  #     firefox: latest
+  #     chrome: stable
+  #   before_script:
+  #     - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
+  #     - cargo install-update -a
+  #     - curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh -s -- -f
+  #   script:
+  #     - cd ./crates/header
+  #     - wasm-pack build
+  #     - wasm-pack test --chrome --firefox --headless
+
+  # Builds on nightly.
+  - rust: nightly
+    env: RUST_BACKTRACE=1
+    before_script:
+      - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
+      - cargo install-update -a
+      - rustup target add wasm32-unknown-unknown
+    script:
+      - cargo test
+
+  # Builds on beta.
+  - rust: beta
+    env: RUST_BACKTRACE=1
+    before_script:
+      - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
+      - cargo install-update -a
+      - rustup target add wasm32-unknown-unknown
+    script:
+      - cargo test
