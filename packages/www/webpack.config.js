@@ -36,7 +36,7 @@ module.exports = {
       chunkFilename: "[id].css"
     }),
     new OptimizeCssAssetsPlugin({}),
-    new CopyWebpackPlugin(['src/favicon.ico', 'src/CNAME']),
+    new CopyWebpackPlugin(['src/favicon.ico']),
   ],
   module: {
     rules: [{
