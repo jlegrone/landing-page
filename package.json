@@ -12,7 +12,8 @@
     "start": "cd packages/www && yarn start",
     "build:wasm": "rm -rf packages/header && wasm-pack build --out-dir ../../packages/header --scope jlegrone crates/header",
     "build:www": "cd packages/www && yarn build",
-    "build": "yarn build:wasm && yarn build:www"
+    "build": "yarn build:wasm && yarn build:www",
+    "docs": "cargo doc --open"
   },
   "dependencies": {
     "yarn": "^1.12.3"
