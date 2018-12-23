@@ -3,6 +3,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const OptimizeWasmPlugin = require('optimize-wasm-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -24,6 +25,7 @@ module.exports = {
       new TerserPlugin({
         test: /\.js(\?.*)?$/i,
       }),
+      new OptimizeWasmPlugin()
     ],
   },
   plugins: [
