@@ -1,4 +1,3 @@
-/* tslint:disable */
 import * as wasm from './header_bg';
 
 const heap = new Array(32);
@@ -18,67 +17,70 @@ function addHeapObject(obj) {
     return idx;
 }
 
+let cachedTextDecoder = new TextDecoder('utf-8');
+
+let cachegetUint8Memory = null;
+function getUint8Memory() {
+    if (cachegetUint8Memory === null || cachegetUint8Memory.buffer !== wasm.memory.buffer) {
+        cachegetUint8Memory = new Uint8Array(wasm.memory.buffer);
+    }
+    return cachegetUint8Memory;
+}
+
+function getStringFromWasm(ptr, len) {
+    return cachedTextDecoder.decode(getUint8Memory().subarray(ptr, ptr + len));
+}
+
+export function __wbg_error_4bb6c2a97407129a(arg0, arg1) {
+    let varg0 = getStringFromWasm(arg0, arg1);
+
+    varg0 = varg0.slice();
+    wasm.__wbindgen_free(arg0, arg1 * 1);
+
+    console.error(varg0);
+}
+
+export function __wbg_new_59cb74e423758ede() {
+    return addHeapObject(new Error());
+}
+
 function getObject(idx) { return heap[idx]; }
 
-function isLikeNone(x) {
-    return x === undefined || x === null;
+let cachedTextEncoder = new TextEncoder('utf-8');
+
+let WASM_VECTOR_LEN = 0;
+
+let passStringToWasm;
+if (typeof cachedTextEncoder.encodeInto === 'function') {
+    passStringToWasm = function(arg) {
+
+        let size = arg.length;
+        let ptr = wasm.__wbindgen_malloc(size);
+        let writeOffset = 0;
+        while (true) {
+            const view = getUint8Memory().subarray(ptr + writeOffset, ptr + size);
+            const { read, written } = cachedTextEncoder.encodeInto(arg, view);
+            arg = arg.substring(read);
+            writeOffset += written;
+            if (arg.length === 0) {
+                break;
+            }
+            ptr = wasm.__wbindgen_realloc(ptr, size, size * 2);
+            size *= 2;
+        }
+        WASM_VECTOR_LEN = writeOffset;
+        return ptr;
+    };
+} else {
+    passStringToWasm = function(arg) {
+
+        const buf = cachedTextEncoder.encode(arg);
+        const ptr = wasm.__wbindgen_malloc(buf.length);
+        getUint8Memory().set(buf, ptr);
+        WASM_VECTOR_LEN = buf.length;
+        return ptr;
+    };
 }
-
-function GetOwnOrInheritedPropertyDescriptor(obj, id) {
-    while (obj) {
-        let desc = Object.getOwnPropertyDescriptor(obj, id);
-        if (desc) return desc;
-        obj = Object.getPrototypeOf(obj);
-    }
-return {}
-}
-
-const __widl_f_canvas_CanvasRenderingContext2D_target = GetOwnOrInheritedPropertyDescriptor(typeof CanvasRenderingContext2D === 'undefined' ? null : CanvasRenderingContext2D.prototype, 'canvas').get || function() {
-    throw new Error(`wasm-bindgen: CanvasRenderingContext2D.canvas does not exist`);
-};
-
-export function __widl_f_canvas_CanvasRenderingContext2D(arg0) {
-
-    const val = __widl_f_canvas_CanvasRenderingContext2D_target.call(getObject(arg0));
-    return isLikeNone(val) ? 0 : addHeapObject(val);
-
-}
-
-const __widl_f_begin_path_CanvasRenderingContext2D_target = typeof CanvasRenderingContext2D === 'undefined' ? null : CanvasRenderingContext2D.prototype.beginPath || function() {
-    throw new Error(`wasm-bindgen: CanvasRenderingContext2D.beginPath does not exist`);
-};
-
-export function __widl_f_begin_path_CanvasRenderingContext2D(arg0) {
-    __widl_f_begin_path_CanvasRenderingContext2D_target.call(getObject(arg0));
-}
-
-const __widl_f_fill_CanvasRenderingContext2D_target = typeof CanvasRenderingContext2D === 'undefined' ? null : CanvasRenderingContext2D.prototype.fill || function() {
-    throw new Error(`wasm-bindgen: CanvasRenderingContext2D.fill does not exist`);
-};
-
-export function __widl_f_fill_CanvasRenderingContext2D(arg0) {
-    __widl_f_fill_CanvasRenderingContext2D_target.call(getObject(arg0));
-}
-
-const __widl_f_set_stroke_style_CanvasRenderingContext2D_target = GetOwnOrInheritedPropertyDescriptor(typeof CanvasRenderingContext2D === 'undefined' ? null : CanvasRenderingContext2D.prototype, 'strokeStyle').set || function() {
-    throw new Error(`wasm-bindgen: CanvasRenderingContext2D.strokeStyle does not exist`);
-};
-
-export function __widl_f_set_stroke_style_CanvasRenderingContext2D(arg0, arg1) {
-    __widl_f_set_stroke_style_CanvasRenderingContext2D_target.call(getObject(arg0), getObject(arg1));
-}
-
-const __widl_f_set_fill_style_CanvasRenderingContext2D_target = GetOwnOrInheritedPropertyDescriptor(typeof CanvasRenderingContext2D === 'undefined' ? null : CanvasRenderingContext2D.prototype, 'fillStyle').set || function() {
-    throw new Error(`wasm-bindgen: CanvasRenderingContext2D.fillStyle does not exist`);
-};
-
-export function __widl_f_set_fill_style_CanvasRenderingContext2D(arg0, arg1) {
-    __widl_f_set_fill_style_CanvasRenderingContext2D_target.call(getObject(arg0), getObject(arg1));
-}
-
-const __widl_f_arc_CanvasRenderingContext2D_target = typeof CanvasRenderingContext2D === 'undefined' ? null : CanvasRenderingContext2D.prototype.arc || function() {
-    throw new Error(`wasm-bindgen: CanvasRenderingContext2D.arc does not exist`);
-};
 
 let cachegetUint32Memory = null;
 function getUint32Memory() {
@@ -88,43 +90,153 @@ function getUint32Memory() {
     return cachegetUint32Memory;
 }
 
+export function __wbg_stack_558ba5917b466edd(ret, arg0) {
+
+    const retptr = passStringToWasm(getObject(arg0).stack);
+    const retlen = WASM_VECTOR_LEN;
+    const mem = getUint32Memory();
+    mem[ret / 4] = retptr;
+    mem[ret / 4 + 1] = retlen;
+
+}
+
+function isLikeNone(x) {
+    return x === undefined || x === null;
+}
+
+export function __widl_f_canvas_CanvasRenderingContext2D(arg0) {
+
+    const val = getObject(arg0).canvas;
+    return isLikeNone(val) ? 0 : addHeapObject(val);
+
+}
+
+export function __widl_f_begin_path_CanvasRenderingContext2D(arg0) {
+    getObject(arg0).beginPath();
+}
+
+export function __widl_f_fill_CanvasRenderingContext2D(arg0) {
+    getObject(arg0).fill();
+}
+
+export function __widl_f_set_stroke_style_CanvasRenderingContext2D(arg0, arg1) {
+    getObject(arg0).strokeStyle = getObject(arg1);
+}
+
+export function __widl_f_set_fill_style_CanvasRenderingContext2D(arg0, arg1) {
+    getObject(arg0).fillStyle = getObject(arg1);
+}
+
+function handleError(exnptr, e) {
+    const view = getUint32Memory();
+    view[exnptr / 4] = 1;
+    view[exnptr / 4 + 1] = addHeapObject(e);
+}
+
 export function __widl_f_arc_CanvasRenderingContext2D(arg0, arg1, arg2, arg3, arg4, arg5, exnptr) {
     try {
-        __widl_f_arc_CanvasRenderingContext2D_target.call(getObject(arg0), arg1, arg2, arg3, arg4, arg5);
+        getObject(arg0).arc(arg1, arg2, arg3, arg4, arg5);
     } catch (e) {
-        const view = getUint32Memory();
-        view[exnptr / 4] = 1;
-        view[exnptr / 4 + 1] = addHeapObject(e);
-
+        handleError(exnptr, e);
     }
 }
 
-const __widl_f_clear_rect_CanvasRenderingContext2D_target = typeof CanvasRenderingContext2D === 'undefined' ? null : CanvasRenderingContext2D.prototype.clearRect || function() {
-    throw new Error(`wasm-bindgen: CanvasRenderingContext2D.clearRect does not exist`);
-};
-
 export function __widl_f_clear_rect_CanvasRenderingContext2D(arg0, arg1, arg2, arg3, arg4) {
-    __widl_f_clear_rect_CanvasRenderingContext2D_target.call(getObject(arg0), arg1, arg2, arg3, arg4);
+    getObject(arg0).clearRect(arg1, arg2, arg3, arg4);
 }
-
-const __widl_f_width_HTMLCanvasElement_target = GetOwnOrInheritedPropertyDescriptor(typeof HTMLCanvasElement === 'undefined' ? null : HTMLCanvasElement.prototype, 'width').get || function() {
-    throw new Error(`wasm-bindgen: HTMLCanvasElement.width does not exist`);
-};
 
 export function __widl_f_width_HTMLCanvasElement(arg0) {
-    return __widl_f_width_HTMLCanvasElement_target.call(getObject(arg0));
+    return getObject(arg0).width;
 }
-
-const __widl_f_height_HTMLCanvasElement_target = GetOwnOrInheritedPropertyDescriptor(typeof HTMLCanvasElement === 'undefined' ? null : HTMLCanvasElement.prototype, 'height').get || function() {
-    throw new Error(`wasm-bindgen: HTMLCanvasElement.height does not exist`);
-};
 
 export function __widl_f_height_HTMLCanvasElement(arg0) {
-    return __widl_f_height_HTMLCanvasElement_target.call(getObject(arg0));
+    return getObject(arg0).height;
 }
 
-export function __wbg_random_2cc0c8d054a5c72a() {
+export function __wbg_random_28a14a8b9cdf19f7() {
     return Math.random();
+}
+
+export function __wbindgen_string_new(p, l) { return addHeapObject(getStringFromWasm(p, l)); }
+
+export function __wbindgen_debug_string(i, len_ptr) {
+    const debug_str =
+    val => {
+        // primitive types
+        const type = typeof val;
+        if (type == 'number' || type == 'boolean' || val == null) {
+            return  `${val}`;
+        }
+        if (type == 'string') {
+            return `"${val}"`;
+        }
+        if (type == 'symbol') {
+            const description = val.description;
+            if (description == null) {
+                return 'Symbol';
+            } else {
+                return `Symbol(${description})`;
+            }
+        }
+        if (type == 'function') {
+            const name = val.name;
+            if (typeof name == 'string' && name.length > 0) {
+                return `Function(${name})`;
+            } else {
+                return 'Function';
+            }
+        }
+        // objects
+        if (Array.isArray(val)) {
+            const length = val.length;
+            let debug = '[';
+            if (length > 0) {
+                debug += debug_str(val[0]);
+            }
+            for(let i = 1; i < length; i++) {
+                debug += ', ' + debug_str(val[i]);
+            }
+            debug += ']';
+            return debug;
+        }
+        // Test for built-in
+        const builtInMatches = /\[object ([^\]]+)\]/.exec(toString.call(val));
+        let className;
+        if (builtInMatches.length > 1) {
+            className = builtInMatches[1];
+        } else {
+            // Failed to match the standard '[object ClassName]'
+            return toString.call(val);
+        }
+        if (className == 'Object') {
+            // we're a user defined class or Object
+            // JSON.stringify avoids problems with cycles, and is generally much
+            // easier than looping through ownProperties of `val`.
+            try {
+                return 'Object(' + JSON.stringify(val) + ')';
+            } catch (_) {
+                return 'Object';
+            }
+        }
+        // errors
+        if (val instanceof Error) {
+        return `${val.name}: ${val.message}
+        ${val.stack}`;
+    }
+    // TODO we could test for more things here, like `Set`s and `Map`s.
+    return className;
+}
+;
+const toString = Object.prototype.toString;
+const val = getObject(i);
+const debug = debug_str(val);
+const ptr = passStringToWasm(debug);
+getUint32Memory()[len_ptr / 4] = WASM_VECTOR_LEN;
+return ptr;
+}
+
+export function __wbindgen_throw(ptr, len) {
+    throw new Error(getStringFromWasm(ptr, len));
 }
 
 function freeMouseState(ptr) {
@@ -191,23 +303,23 @@ export class Simulation {
     }
 
     /**
-    * @param {any} arg0
-    * @param {number} arg1
-    * @param {number} arg2
-    * @param {number} arg3
+    * @param {any} context
+    * @param {number} particle_count
+    * @param {number} acceleration_multiplier
+    * @param {number} effect_distance
     * @returns {}
     */
-    constructor(arg0, arg1, arg2, arg3) {
-        this.ptr = wasm.simulation_new(addHeapObject(arg0), arg1, arg2, arg3);
+    constructor(context, particle_count, acceleration_multiplier, effect_distance) {
+        this.ptr = wasm.simulation_new(addHeapObject(context), particle_count, acceleration_multiplier, effect_distance);
     }
     /**
-    * @param {number} arg0
-    * @param {number} arg1
-    * @param {MouseState} arg2
+    * @param {number} canvas_width
+    * @param {number} canvas_height
+    * @param {MouseState} mouse
     * @returns {void}
     */
-    draw(arg0, arg1, arg2) {
-        return wasm.simulation_draw(this.ptr, arg0, arg1, arg2.ptr);
+    draw(canvas_width, canvas_height, mouse) {
+        return wasm.simulation_draw(this.ptr, canvas_width, canvas_height, mouse.ptr);
     }
 }
 
@@ -218,75 +330,4 @@ function dropObject(idx) {
 }
 
 export function __wbindgen_object_drop_ref(i) { dropObject(i); }
-
-let cachedTextDecoder = new TextDecoder('utf-8');
-
-let cachegetUint8Memory = null;
-function getUint8Memory() {
-    if (cachegetUint8Memory === null || cachegetUint8Memory.buffer !== wasm.memory.buffer) {
-        cachegetUint8Memory = new Uint8Array(wasm.memory.buffer);
-    }
-    return cachegetUint8Memory;
-}
-
-function getStringFromWasm(ptr, len) {
-    return cachedTextDecoder.decode(getUint8Memory().subarray(ptr, ptr + len));
-}
-
-export function __wbindgen_string_new(p, l) {
-    return addHeapObject(getStringFromWasm(p, l));
-}
-
-export function __wbindgen_number_get(n, invalid) {
-    let obj = getObject(n);
-    if (typeof(obj) === 'number') return obj;
-    getUint8Memory()[invalid] = 1;
-    return 0;
-}
-
-export function __wbindgen_is_null(idx) {
-    return getObject(idx) === null ? 1 : 0;
-}
-
-export function __wbindgen_is_undefined(idx) {
-    return getObject(idx) === undefined ? 1 : 0;
-}
-
-export function __wbindgen_boolean_get(i) {
-    let v = getObject(i);
-    if (typeof(v) === 'boolean') {
-        return v ? 1 : 0;
-    } else {
-        return 2;
-    }
-}
-
-export function __wbindgen_is_symbol(i) {
-    return typeof(getObject(i)) === 'symbol' ? 1 : 0;
-}
-
-let cachedTextEncoder = new TextEncoder('utf-8');
-
-let WASM_VECTOR_LEN = 0;
-
-function passStringToWasm(arg) {
-
-    const buf = cachedTextEncoder.encode(arg);
-    const ptr = wasm.__wbindgen_malloc(buf.length);
-    getUint8Memory().set(buf, ptr);
-    WASM_VECTOR_LEN = buf.length;
-    return ptr;
-}
-
-export function __wbindgen_string_get(i, len_ptr) {
-    let obj = getObject(i);
-    if (typeof(obj) !== 'string') return 0;
-    const ptr = passStringToWasm(obj);
-    getUint32Memory()[len_ptr / 4] = WASM_VECTOR_LEN;
-    return ptr;
-}
-
-export function __wbindgen_throw(ptr, len) {
-    throw new Error(getStringFromWasm(ptr, len));
-}
 

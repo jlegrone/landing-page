@@ -12,3 +12,5 @@ export function __wbg_simulation_free(a: number): void;
 export function simulation_new(a: number, b: number, c: number, d: number): number;
 export function simulation_draw(a: number, b: number, c: number, d: number): void;
 export function __wbindgen_malloc(a: number): number;
+export function __wbindgen_realloc(a: number, b: number, c: number): number;
+export function __wbindgen_free(a: number, b: number): void;
