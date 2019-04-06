@@ -47,6 +47,8 @@ impl Simulation {
     acceleration_multiplier: f64,
     effect_distance: f64,
   ) -> Self {
+    console_error_panic_hook::set_once();
+
     let canvas = context.canvas().unwrap();
     let width = canvas.width() as f64;
     let height = canvas.height() as f64;

@@ -3,11 +3,21 @@ import {
   MouseState
 } from "@jlegrone/header/header";
 
+interface OffscreenCanvas extends EventTarget {
+  width: number;
+  height: number;
+  getContext(contextId: string): CanvasRenderingContext2D;
+}
+
+interface NewHTMLCanvasElement extends HTMLCanvasElement {
+  transferControlToOffscreen(): OffscreenCanvas;
+}
+
 const PARTICLE_COUNT = 1000;
 const ACCELERATION_MULTIPLIER = 1.2;
 const EFFECT_DISTANCE = 50.0;
 
-const canvas = <HTMLCanvasElement>document.getElementById('canvas');
+const canvas = (document.getElementById('canvas') as NewHTMLCanvasElement).transferControlToOffscreen();
 const context = canvas.getContext("2d");
 const mouse = new MouseState();
 
