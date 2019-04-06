@@ -127,6 +127,41 @@ export function __wbg_random_2cc0c8d054a5c72a() {
     return Math.random();
 }
 
+function freeSimulation(ptr) {
+
+    wasm.__wbg_simulation_free(ptr);
+}
+/**
+*/
+export class Simulation {
+
+    free() {
+        const ptr = this.ptr;
+        this.ptr = 0;
+        freeSimulation(ptr);
+    }
+
+    /**
+    * @param {any} arg0
+    * @param {number} arg1
+    * @param {number} arg2
+    * @param {number} arg3
+    * @returns {}
+    */
+    constructor(arg0, arg1, arg2, arg3) {
+        this.ptr = wasm.simulation_new(addHeapObject(arg0), arg1, arg2, arg3);
+    }
+    /**
+    * @param {number} arg0
+    * @param {number} arg1
+    * @param {MouseState} arg2
+    * @returns {void}
+    */
+    draw(arg0, arg1, arg2) {
+        return wasm.simulation_draw(this.ptr, arg0, arg1, arg2.ptr);
+    }
+}
+
 function freeMouseState(ptr) {
 
     wasm.__wbg_mousestate_free(ptr);
@@ -173,41 +208,6 @@ export class MouseState {
     */
     constructor() {
         this.ptr = wasm.mousestate_new();
-    }
-}
-
-function freeSimulation(ptr) {
-
-    wasm.__wbg_simulation_free(ptr);
-}
-/**
-*/
-export class Simulation {
-
-    free() {
-        const ptr = this.ptr;
-        this.ptr = 0;
-        freeSimulation(ptr);
-    }
-
-    /**
-    * @param {any} arg0
-    * @param {number} arg1
-    * @param {number} arg2
-    * @param {number} arg3
-    * @returns {}
-    */
-    constructor(arg0, arg1, arg2, arg3) {
-        this.ptr = wasm.simulation_new(addHeapObject(arg0), arg1, arg2, arg3);
-    }
-    /**
-    * @param {number} arg0
-    * @param {number} arg1
-    * @param {MouseState} arg2
-    * @returns {void}
-    */
-    draw(arg0, arg1, arg2) {
-        return wasm.simulation_draw(this.ptr, arg0, arg1, arg2.ptr);
     }
 }
 
