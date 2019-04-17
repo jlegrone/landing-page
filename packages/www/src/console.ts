@@ -9,6 +9,6 @@ const styles = [
   'font-weight: bold'
 ].join(';');
 
-const text = "Thanks for stopping by! This page was built with rust and webassembly. Source is available at https://github.com/jlegrone/jlegrone.github.io.";
+const text = "Thanks for stopping by! This page was built with rust and webassembly. Source is available at https://github.com/jlegrone/landing-page.";
 
 console.info(`%c  ${text}  `, styles);

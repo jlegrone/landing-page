@@ -1,5 +1,6 @@
 {
   "name": "@jlegrone/www",
+  "private": true,
   "version": "0.1.0",
   "description": "create an app to consume rust-generated wasm packages",
   "main": "index.js",
@@ -37,9 +38,11 @@
     "url-loader": "^1.1.2",
     "webpack": "^4.16.3",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "webpack-dev-server": "^3.1.5",
+    "worker-loader": "^2.0.0"
   },
   "dependencies": {
-    "@jlegrone/header": "0.1.0"
+    "@jlegrone/header": "0.1.0",
+    "@jlegrone/worker": "0.1.0"
   }
 }

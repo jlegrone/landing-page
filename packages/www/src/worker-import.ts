@@ -1,7 +1,4 @@
-import './console';
-import w from './worker-import';
-
-console.log(w);
+// console.log(worker);
 
 // import Worker from 'worker-loader!./worker';
 
@@ -12,9 +9,10 @@ console.log(w);
 
 // worker.addEventListener("message", function () {});
 
-// async function bootstrap() {
-//   const w = await import('./worker');
-//   console.log(w)
-// }
+async function bootstrap() {
+  await import('./worker');
+}
 
-// bootstrap();
+bootstrap();
+
+export default null;
