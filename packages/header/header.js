@@ -46,9 +46,9 @@ export function __wbg_new_59cb74e423758ede() {
 
 function getObject(idx) { return heap[idx]; }
 
-let cachedTextEncoder = new TextEncoder('utf-8');
-
 let WASM_VECTOR_LEN = 0;
+
+let cachedTextEncoder = new TextEncoder('utf-8');
 
 let passStringToWasm;
 if (typeof cachedTextEncoder.encodeInto === 'function') {
@@ -60,13 +60,12 @@ if (typeof cachedTextEncoder.encodeInto === 'function') {
         while (true) {
             const view = getUint8Memory().subarray(ptr + writeOffset, ptr + size);
             const { read, written } = cachedTextEncoder.encodeInto(arg, view);
-            arg = arg.substring(read);
             writeOffset += written;
-            if (arg.length === 0) {
+            if (read === arg.length) {
                 break;
             }
-            ptr = wasm.__wbindgen_realloc(ptr, size, size * 2);
-            size *= 2;
+            arg = arg.substring(read);
+            ptr = wasm.__wbindgen_realloc(ptr, size, size += arg.length * 3);
         }
         WASM_VECTOR_LEN = writeOffset;
         return ptr;
@@ -153,7 +152,7 @@ export function __widl_f_height_HTMLCanvasElement(arg0) {
     return getObject(arg0).height;
 }
 
-export function __wbg_random_28a14a8b9cdf19f7() {
+export function __wbg_random_58bd29ed438c19c0() {
     return Math.random();
 }
 
