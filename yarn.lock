@@ -387,10 +387,10 @@ binary-extensions@^1.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.13.1.tgz#598afe54755b2868a5330d2aff9d4ebb53209b65"
   integrity sha512-Un7MIEDdUC5gNpcGDV97op1Ywk748MpHcFTHoYs6qnj1Z3j7I53VG3nwZhKzoBZmbdRNnb6WRdFlwl7tSDuZGw==
 
-binaryen@^78.0.0:
-  version "78.0.0"
-  resolved "https://registry.yarnpkg.com/binaryen/-/binaryen-78.0.0.tgz#eb38e7fb2924ade6bd86f804c254dc0dad8b6ed9"
-  integrity sha512-xLYIsk3Qar8H+LBFHCsFuE4QVhbxLAStBiDlIsjFh3FJ9IViYHYcS+4pOzz0RkUtCde2AhuBFJnf+HOZpxj0nw==
+binaryen@^85.0.0:
+  version "85.0.0"
+  resolved "https://registry.yarnpkg.com/binaryen/-/binaryen-85.0.0.tgz#72c385d558862e52b75918bbce748d4627a98499"
+  integrity sha512-01z4ZvA1O1hhNH+R4QQHuqzslecdHyzHYeuPMm4rB3hEiCP6BQlXZhHs68FgKfKT199YOt1uy5bmAIsilaOQ9g==
 
 bluebird@^3.5.3:
   version "3.5.4"
@@ -3184,12 +3184,12 @@ optimize-css-assets-webpack-plugin@^5.0.1:
     cssnano "^4.1.0"
     last-call-webpack-plugin "^3.0.0"
 
-optimize-wasm-webpack-plugin@^1.0.6:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/optimize-wasm-webpack-plugin/-/optimize-wasm-webpack-plugin-1.0.8.tgz#85d93b2a63fb25249f0562c33ea5577df8f39a2e"
-  integrity sha512-RVVUErKNdb1CCYtIEHjOrdtH24/Xd8Iejj2RFdc/NUVd7o2ksiacjLS+DvnEFSXAyQjS/jVJBmh/OVdFKIPHyg==
+optimize-wasm-webpack-plugin@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/optimize-wasm-webpack-plugin/-/optimize-wasm-webpack-plugin-1.0.12.tgz#7252da00e356822aea9089f8ca73afcac36319a8"
+  integrity sha512-yq9/wf2oEUAIj/LHck2851eSr5iivetJH/TtyO54h3XpO6elDjl2LBn0wPSkAQPCCbWGgGHUA7er0Ibf/Okj+w==
   dependencies:
-    binaryen "^78.0.0"
+    binaryen "^85.0.0"
     webpack-sources "^1.3.0"
 
 original@^1.0.0:
